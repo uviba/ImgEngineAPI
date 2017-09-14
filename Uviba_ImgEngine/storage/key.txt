@@ -1,0 +1,1 @@
+{"new_key":"tmp510ap_k3959b2a4d5e8605ada5890de347609b1358cdb038daf41a","expire_time":"3.6E+26","private_key":"private812u179ref3959144067395a31efe08a0fd7c3325a83d197b49fbbbf559144067396105914406739646591440673967b","web_folder_url":"https:\/\/cdn.linguatrip.com\/Images\/"}
