@@ -1,0 +1,1792 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Resizzer API documentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;php&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="php">php</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#quick-start" class="toc-h1 toc-link" data-title="Quick Start">Quick Start</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#setup" class="toc-h2 toc-link" data-title="Quick Start">Setup</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#configuration" class="toc-h1 toc-link" data-title="Configuration">Configuration</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#connect-parameters" class="toc-h2 toc-link" data-title="Authentication">Connect Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#web-folders" class="toc-h1 toc-link" data-title="Web Folders">Web Folders</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#how-to-use-web-folders" class="toc-h2 toc-link" data-title="Web Folders">How to use Web folders</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#integration" class="toc-h1 toc-link" data-title="Integration">Integration</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ui-integration-support" class="toc-h2 toc-link" data-title="Integration">UI Integration support</a>
+                  </li>
+                  <li>
+                    <a href="#integration-with-server-side-code" class="toc-h2 toc-link" data-title="Integration">Integration with server side code</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#image-processing" class="toc-h1 toc-link" data-title="Image Processing">Image Processing</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#manipulation-params" class="toc-h2 toc-link" data-title="Image Processing">Manipulation params</a>
+                  </li>
+                  <li>
+                    <a href="#usage-of-manipulation-params" class="toc-h2 toc-link" data-title="Image Processing">Usage of manipulation params</a>
+                  </li>
+                  <li>
+                    <a href="#responsive-images" class="toc-h2 toc-link" data-title="Image Processing">Responsive Images</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#upload" class="toc-h1 toc-link" data-title="Upload">Upload</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#upload-button" class="toc-h2 toc-link" data-title="Upload">Upload Button</a>
+                  </li>
+                  <li>
+                    <a href="#server-side-upload" class="toc-h2 toc-link" data-title="Upload">Server Side Upload</a>
+                  </li>
+                  <li>
+                    <a href="#upload-response" class="toc-h2 toc-link" data-title="Upload">Upload Response</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#error-codes" class="toc-h2 toc-link" data-title="Errors">Error codes</a>
+                  </li>
+                  <li>
+                    <a href="#errors-for-image-processing" class="toc-h2 toc-link" data-title="Errors">Errors for image processing</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#colors" class="toc-h1 toc-link" data-title="Colors">Colors</a>
+          </li>
+          <li>
+            <a href="#examples" class="toc-h1 toc-link" data-title="Examples">Examples</a>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='http://cloudengine.newtimebox.com/'>Sign Up for an API Key</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p><span style="display:none;" >
+includes:
+  - errors</span>
+Welcome to the Resizzer API! You can use our API to handle uploading, storing, processing and delivery of your images in your web and mobile apps easily.</p>
+
+<p>You can view code examples in the dark area to the right.</p>
+
+<p>This API will help your website to improve performance and provides URL based image manipulation, so you can manipulate your images from URL. To see how our service works you can open <a href="http://cloudengine.newtimebox.com/quick_start" target="_blank" >this page</a>, it contains our <code>Upload Button</code> and some Manipulation params.</p>
+<h1 id='quick-start'>Quick Start</h1>
+<p>In this section you can see quick examples. In 5 minute you will be able to use our service easily. </p>
+<h2 id='setup'>Setup</h2>
+<p>Upload <a href="https://github.com/NewTimeBox/OOS_Engine_KEY_API/archive/master.zip" target="_blank" >library</a> and include autoload file. To learn how to do this you can see <a href="#configuration">Configuration section</a>.</p>
+<pre class="highlight php tab-php"><code>
+<span class="cp">&lt;?php</span>
+<span class="k">require</span> <span class="s1">'path/to/ResizzerAPI/autoload.php'</span><span class="p">;</span>
+</code></pre>
+<p>Auth with your secret key. Follow steps in begining of <a href="#authentication">Authentication section</a>;</p>
+<pre class="highlight php tab-php"><code>
+<span class="cp">&lt;?php</span>
+<span class="nv">$secret_key</span><span class="o">=</span><span class="s1">'Your_SECRET_KEY'</span><span class="p">;</span>
+<span class="nv">$hours</span><span class="o">=</span><span class="mi">12</span><span class="p">;</span>
+<span class="nv">$secure</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span> 
+<span class="c1">//you can pass params array (which can be used for web folders)
+// as 4th argument to function below optionally
+</span><span class="nx">Resizzer</span><span class="o">::</span><span class="na">connect</span><span class="p">(</span><span class="nv">$secret_key</span><span class="p">,</span><span class="nv">$hours</span><span class="p">,</span><span class="nv">$secure</span>
+<span class="p">,</span><span class="k">array</span><span class="p">(</span><span class="s1">'web_folder_url'</span><span class="o">=&gt;</span><span class="s1">'http://yoursite.com/path/to/images'</span><span class="p">)</span>
+
+<span class="p">);</span>
+
+</code></pre>
+<blockquote>
+<p>Make sure to replace Your_SECRET_KEY with your SECRET API key.</p>
+</blockquote>
+
+<p>To see How to manipulate images you can look at <a href="#usage-of-manipulation-params">Usage of manipulation params</a>.</p>
+<pre class="highlight php tab-php"><code>
+<span class="cp">&lt;?php</span>
+
+<span class="nv">$image_name</span><span class="o">=</span><span class="s2">"cat.jpg"</span><span class="p">;</span> <span class="c1">//you can also use full url 
+</span><span class="k">echo</span> <span class="s1">'&lt;img src="'</span><span class="o">.</span><span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_url</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span>
+<span class="k">array</span><span class="p">(</span><span class="s1">'height'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">,</span><span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">,</span><span class="s1">'crop'</span><span class="o">=&gt;</span><span class="s1">'(123,123,123,12)'</span><span class="p">))</span><span class="o">.</span><span class="s1">'" /&gt;'</span><span class="p">;</span>
+</code></pre>
+<p>If you want to use our upload button you can look at <a href="#upload-button">Upload Button</a>.Our upload button will upload new images to our servers.
+<code>Resizzer::get_image_url</code> this function can get your images doesn&#39;t matter where you upload them, it can be your own server, our service or it can be totally different server (with url).</p>
+
+<p>If you want to download your new images to our server with php code, you can use our <a href="#server-side-upload">Server Side Upload</a>.</p>
+
+<aside class="warning">
+Your project should contain only one copy of our library, otherwise you will get <code> connect key is not valid error</code>
+ Note if you have sub domain you should include our library instead of duplicate it. When you duplicate our library you can get <code>connect key</code>. If you got this error, you should include our library from one point, then you should clear inside of key.txt in our library which is located at ResizzerAPI/storage/key.txt.
+</aside>
+<h1 id='configuration'>Configuration</h1>
+<blockquote>
+<p>Use following code after installation of our library to include autoload file</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+
+<span class="nv">$Resizzer_API_PATH</span> <span class="o">=</span> <span class="s1">'Path of ResizerAPI'</span><span class="p">;</span>
+<span class="cm">/*example:
+{Your local path to our library}.'/ResizerAPI/' */</span>
+<span class="c1">//require autoload from folder you just downloaded
+</span><span class="k">require</span> <span class="nv">$Resizzer_API_PATH</span><span class="o">.</span><span class="s1">'/autoload.php'</span><span class="p">;</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>Path of ResizerAPI</code> with local path to ResizerAPI library.</p>
+</blockquote>
+
+<p>Install our API from <a href="https://github.com/NewTimeBox/OOS_Engine_KEY_API/archive/master.zip" target="_blank" >Github</a> , or visit our <a href="https://github.com/NewTimeBox/OOS_Engine_KEY_API/" target="_blank" >Github library</a> and just click <em>Clone or download</em> button and click <em>Download zip</em>. After extracting zip, copy folder which named as <em>ResizeAPI</em> into your project and use path of this folder to replace <code>Path of ResizeAPI</code>.The only purpose is just to include autoload.php file in <em>ResizeAPI</em> folder you just downloaded.</p>
+
+<aside class="notice">
+You must replace <code>Path of ResizeAPI</code> with server path of <i>ResizeAPI folder</i> which you just installed.
+</aside>
+<h1 id='authentication'>Authentication</h1>
+<p>Resizzer uses API keys to allow access to our service. You can register a new Resizzer API key at our <a href="http://cloudengine.newtimebox.com" target="_blank" >developer portal</a>. Just sign up, in the dashboard click <em>New Project</em> button, then choose best plan that fits you. Then back to dashboard, click <code>Pay</code> button (if payment failed you can use our redeem code from Payment section top of page) and click <code>More</code> button from the project that you want to get API key. Then scroll down and copy <code>SECRET KEY</code>.</p>
+
+<p>Use <code>Resizzer::connect</code> function in order to connect with our API it take 4 parameters:<code>$secret_key, $hours, $secure,$params</code>.</p>
+
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+
+<span class="nv">$secret_key</span><span class="o">=</span><span class="s1">'Your_SECRET_KEY'</span><span class="p">;</span>
+<span class="nv">$hours</span><span class="o">=</span><span class="mi">12</span><span class="p">;</span>
+<span class="nv">$secure</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span> 
+<span class="c1">//you can pass params array (which can be used for web folders)
+// as 4th argument to function below optionally
+</span><span class="nx">Resizzer</span><span class="o">::</span><span class="na">connect</span><span class="p">(</span><span class="nv">$secret_key</span><span class="p">,</span><span class="nv">$hours</span><span class="p">,</span><span class="nv">$secure</span><span class="p">);</span>
+
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>Your_SECRET_KEY</code> with your SECRET API  key.</p>
+</blockquote>
+<h3 id='connect-parameters'>Connect Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>secret_key</td>
+<td>required</td>
+<td>You should pass your SECRET_KEY.</td>
+</tr>
+<tr>
+<td>hours</td>
+<td>12</td>
+<td>It shows how many hours are required to refresh your <code>connect key</code> via sending your <code>private key</code> with <code>Curl</code> request to Resizzer servers to get a new <code>connect key</code>, so each <code>X</code> hours your server will refresh <code>connect key</code> . We are using connect key with <code>GET</code> param in each image request to recognize your API account.</td>
+</tr>
+<tr>
+<td>secure</td>
+<td>true</td>
+<td>It is recommended to set it true. If it is false, everyone can manipulate your images from URL bar of the browser and it can cause increase of Resizzer service costs for you. If <code>secure</code> is true, only your server side codes can manipulate images. If someone tries to manipulate your images from URL bar of their browsers, they will get <code>connect key is not valid</code> response from our servers, so you are safe. To test how our API works you can set it false, so you will be able to manipulate it from URL bar.</td>
+</tr>
+<tr>
+<td>params</td>
+<td>array()</td>
+<td>You can pass <code>web_folder_url</code> option to array. If you set it to link of your server folder which contains all your images, you won&#39;t need to integrate your website&#39;s images, because via that link you provide, we will find your existing images. You will pass image name and we will combine image name and web_folder_url and we will get full url so we will be able to manipulate your existing images.(E.g. <code>http://example.com/images/</code>. See <a href="#web-folders">Web Folders</a>).</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>Your_SECRET_KEY</code> with your Secret API Key.
+</aside>
+<h1 id='web-folders'>Web Folders</h1>
+<p><code>Web Folders</code> help you to use your existing images with our service without uploading them to our servers (To learn more details about integration and uploading process for your existing images see <a href="#integration">Integration section</a>). If you set <code>web_folder_url</code> index to link of your server folder which contains all your existing images, you won&#39;t need to upload them to our server, because via that link you provided, we will find them . You will pass image name then we will combine <code>$image_name</code> with <code>web_folder_url</code> and we will get full URL of image itself, so we will be able to manipulate your existing images.</p>
+<h2 id='how-to-use-web-folders'>How to use Web folders</h2>
+<blockquote>
+<p>To activate Web folder, use this code:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+
+<span class="nv">$secret_key</span><span class="o">=</span><span class="s1">'Your_SECRET_KEY'</span><span class="p">;</span>
+<span class="nv">$hours</span><span class="o">=</span><span class="mi">12</span><span class="p">;</span>
+<span class="nv">$secure</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span> 
+
+
+<span class="nv">$params</span><span class="o">=</span><span class="k">array</span><span class="p">(</span><span class="s1">'web_folder_url'</span><span class="o">=&gt;</span><span class="s1">'http://yourdomain.com/path/to/imagefolder/'</span><span class="p">);</span>
+<span class="nx">Resizzer</span><span class="o">::</span><span class="na">connect</span><span class="p">(</span><span class="nv">$secret_key</span><span class="p">,</span><span class="nv">$hours</span><span class="p">,</span><span class="nv">$secure</span><span class="p">,</span><span class="nv">$params</span><span class="p">);</span>
+
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>path/to/imagefolder</code> with image folder URL.</p>
+</blockquote>
+
+<p>In <code>Resizzer::connect</code> function you should pass folder&#39;s URL which contains all your images (E.g. <code>http://example.com/images/</code>) with params array which contains index named <code>web_folder_url</code> .</p>
+
+<p>When you pass <code>web_folder_url</code> option, you don&#39;t need to upload your existing images to our service. However, when you use our <code>Upload Button</code> (See <a href="#upload-button">Upload Button section</a>), new images that user uploaded will be saved in our server. If you don&#39;t want your images to be stored in our secure servers, you can use your own upload method to upload new images to your own server. After you provide <code>web_folder_url</code> index in array, you can manipulate images in that URL. When you <a href="#image-processing">manipulate image</a>, <code>$image_name</code> will be same with <code>web_folder_url/image_name</code> URL.</p>
+<h1 id='integration'>Integration</h1>
+<p>To use our service with your existing images, you can integrate them or you can use <code>Web Folders</code>  (See <a href="#web-folders">Web Folders</a>).
+<aside class="success">
+Our integration model is the best in the market. We support UI and server side integration and you don&#39;t need to change anything in your database. Even people who are not a developer can integrate their websites&#39; images with our service.
+</aside></p>
+
+<p>To integrate your existing images, you just need to upload them to our service.
+To do this, we have 2 option: from <em>UI</em> and from <em>server side code</em>.</p>
+<h2 id='ui-integration-support'>UI Integration support</h2>
+<p>Login to <a href="http://cloudengine.newtimebox.com/dashboard" target="_blank" >Dashboard</a>. If you haven&#39;t already created a new project in dashboard click <em><code>[New Project]</code></em> and then choose the best plan that fits you. Click <em><code>[Pay]</code></em> button if you didn&#39;t. Then return back to the dashboard and click <em><code>[More]</code></em> button of project that you want to integrate your images with. Then Scroll down to section which is above of Keys section. You will see <em><code>[Your all images]</code></em> option and <em>Open folder</em> link in front of it. Click it to open the page which is our Cloud Storage console that called OOS(<em>Online Operation System</em>). Then it will automatically open a Virtual folder which contains all your images and is connected to your API KEY. Then choose all your existing images, drag and drop them to that virtual folder (in the browser), and you&#39;re done. Now you can manipulation you existing images, see <a href="#image-processing">Image processing</a> for more information.</p>
+
+<aside class="notice">
+If your images are in your server, download them to your computer. Then open the folder you just downloaded which contains all your existing images ( if it is zip, extract it and then open the folder to see all images)
+</aside>
+<h2 id='integration-with-server-side-code'>Integration with server side code</h2>
+<p>It is dead easy, you don&#39;t even need to change or save new name for each image. You just need to upload them to our service with the same name and you&#39;re done.</p>
+
+<p>To do this you can create an integration file (e.g. <code>integ.php</code>) in your server, it will run just once and then you can delete it. In that file, select paths and names(filenames) of all your existing images. After that, for each image run upload code in some loop. To see how you can upload images with server side code you can select <em><a href="#server-side-upload">Server Side Upload subsection of Upload section</a></em> .</p>
+<h1 id='image-processing'>Image Processing</h1>
+<p>You can manipulate images from URL if you set <code>secure</code> param to false in <code>Resizzer::connect</code> function (see <a href="#authentication">Authentication</a> ) otherwise, it will return <code>secure_token is not true</code> error response. However, when you <code>secure</code> to true, our API will encrypt URL of the image with params that you have passed and will generate secure sign (<code>secure_token</code>) which will be unique for each image name and manipulation params. If someone tries to change url to manipulate image, it will return error for them because <code>secure_token</code> will not be true for new combination of <code>image_name</code> and <code>manipulation params</code>.</p>
+<h2 id='manipulation-params'>Manipulation params</h2>
+<p>You can use each function in <code>Resizzer::get_image_url</code> (and similar function that you can see in code section) in php. This function will return URL which will manipulate image according to params that you have passed.This function accepts <code>image_name</code> and <code>manipulation_array or string</code>.
+<code>image_name</code> can be file name from your server or file name from <a href="#upload-response">Upload Response</a>. In addition, you can pass URL of the image which is from other website. Note: URL that you passed as an image name cannot contain <code>GET</code> params. See example codes in code section.</p>
+
+<blockquote>
+<p>You can use following code to get image URL</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$image_name</span><span class="o">=</span><span class="s2">"cat.jpg"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="s1">'&lt;img src="'</span><span class="o">.</span><span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_url</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span>
+<span class="k">array</span><span class="p">(</span><span class="s1">'height'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">,</span><span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">))</span><span class="o">.</span><span class="s1">'" /&gt;'</span><span class="p">;</span>
+
+<span class="c1">//Also, you can use simple function which will do the same job
+</span><span class="k">echo</span> <span class="s1">'&lt;img src="'</span><span class="o">.</span><span class="nx">resizzer_getUrl</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span>
+<span class="k">array</span><span class="p">(</span><span class="s1">'height'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">,</span><span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">))</span><span class="o">.</span><span class="s1">'" /&gt;'</span><span class="p">;</span>
+
+<span class="c1">// or you can use
+//code below will return img URL with img tag
+</span><span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span><span class="s1">'height'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">,</span><span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">));</span>
+
+<span class="c1">//Also, you can use simple function which will do the same job
+</span>
+<span class="k">echo</span> <span class="nx">resizzer_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span><span class="s1">'height'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">,</span><span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">));</span>
+
+</code></pre>
+<blockquote>
+<p>You can also use URL from the other website</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+
+<span class="nv">$image_name</span><span class="o">=</span><span class="s2">"http://www.tpevent.com/wp-content/uploads/
+2016/01/cute-cat-images-tpevent-5.jpg"</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">resizzer_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span>
+<span class="k">array</span><span class="p">(</span><span class="s1">'height'</span><span class="o">=&gt;</span><span class="mi">600</span><span class="p">,</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">600</span><span class="p">,</span>
+<span class="s1">'border'</span><span class="o">=&gt;</span><span class="s1">'(10,aqua,overlay)'</span><span class="p">));</span>
+
+</code></pre>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Orientation</td>
+<td>or</td>
+<td>Rotates the image.</td>
+</tr>
+<tr>
+<td>Crop</td>
+<td>crop</td>
+<td>Crops the image to specific dimensions.</td>
+</tr>
+<tr>
+<td>Width</td>
+<td>w</td>
+<td>Sets the width of the image, in pixels.</td>
+</tr>
+<tr>
+<td>Height</td>
+<td>h</td>
+<td>Sets the height of the image, in pixels.</td>
+</tr>
+<tr>
+<td>Fit</td>
+<td>fit</td>
+<td>Sets how the image is fitted to its target dimensions.</td>
+</tr>
+<tr>
+<td>Device pixel ratio</td>
+<td>dpr</td>
+<td>Multiples the overall image size.</td>
+</tr>
+<tr>
+<td>Brightness</td>
+<td>bri</td>
+<td>Adjusts the image brightness.</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>con</td>
+<td>Adjusts the image contrast.</td>
+</tr>
+<tr>
+<td>Gamma</td>
+<td>gam</td>
+<td>Adjusts the image gamma.</td>
+</tr>
+<tr>
+<td>Sharpen</td>
+<td>sharp</td>
+<td>Sharpen the image.</td>
+</tr>
+<tr>
+<td>Blur</td>
+<td>blur</td>
+<td>Adds a blur effect to the image.</td>
+</tr>
+<tr>
+<td>Pixelate</td>
+<td>pixel</td>
+<td>Applies a pixelation effect to the image.</td>
+</tr>
+<tr>
+<td>Filter</td>
+<td>filt</td>
+<td>Applies a filter effect to the image.</td>
+</tr>
+<tr>
+<td>Background</td>
+<td>bg</td>
+<td>Sets the background color of the image.</td>
+</tr>
+<tr>
+<td>Border</td>
+<td>border</td>
+<td>Add a border to the image.</td>
+</tr>
+<tr>
+<td>Quality</td>
+<td>q</td>
+<td>Defines the quality of the image.</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>fm</td>
+<td>Encodes the image to a specific format.</td>
+</tr>
+<tr>
+<td>Zoom</td>
+<td>zoom</td>
+<td>allow our service to zoom image if width or height you require is more than actual image width and height. You can test it with small images to see with more details.</td>
+</tr>
+</tbody></table>
+
+<p><code>Resizzer::get_image_url</code>,<code>resizzer_getUrl</code>,<code>Resizzer::get_image_tag</code>,<code>resizzer_image_tag</code> accept the same arguments(params): $image_name,$manipulation_params.
+<code>Manipulation Params</code> of these functions can accept either string or array types. (in string form you should separate them with comma - <code>,</code>).If you are using array form, you can pass <code>htmlWidth</code> and <code>htmlHeight</code> params to <code>get_image_tag</code>,<code>resizzer_image_tag</code> function  to set height and width of image tag.</p>
+<pre class="highlight php tab-php"><code>
+<span class="cp">&lt;?php</span>
+
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_200,h_200,bri_-25,crop_(12,123,123,132)'</span><span class="p">);</span>
+
+</code></pre>
+<p>You can use manipulation functions (<code>or</code>, <code>crop</code>, <code>w</code>, <code>h</code> and others which was shown in chart) like this:<code>function_value</code>. (E.g. <code>w_200</code>,<code>h_200</code>)</p>
+
+<p>For <code>crop</code> and <code>border</code> functions you should use this structure:<code>function_(value)</code>. (E.g. <code>crop_(123,123,123,123)</code> )</p>
+
+<p>General rule is if <code>value</code> part contains <code>,</code> or <code>/</code> you should put value to parenthesis. </p>
+<h2 id='usage-of-manipulation-params'>Usage of manipulation params</h2>
+<p><b>Orientation</b> <code>or</code></p>
+
+<p>Rotates the image. Accepts <code>any integer</code> but only <code>auto, 0, 90, 180 or 270</code> these degrees can be use with <code>border</code> param. Default is auto. The auto option uses Exif data to automatically orient images correctly.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'or_90'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'orientation'</span><span class="o">=&gt;</span><span class="mi">90</span><span class="p">,</span>
+<span class="p">));</span>
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;" src=" http://api.newtimebox.com/Resize_engine/w_500,h_500,or_90/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Fit</b> <code>fit_crop</code></p>
+
+<p>Resizes the image to fill the width and height boundaries and crops any excess image data. The resulting image will match the width and height constraints without distorting the image.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,h_500,fit_crop'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'height'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span>
+<span class="s1">'fit'</span><span class="o">=&gt;</span><span class="s1">'crop'</span><span class="p">,</span>
+<span class="p">));</span>
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;" src=" http://api.newtimebox.com/Resize_engine/w_500,h_500,fit_crop/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Fit - Crop Position</b></p>
+
+<p>You can also set where the image is cropped by adding a crop position. Accepts <code>crop-top-left</code>, <code>crop-top</code>, <code>crop-top-right</code>, <code>crop-left</code>, <code>crop-center</code>, <code>crop-right</code>, <code>crop-bottom-left</code>, <code>crop-bottom</code> or <code>crop-bottom-right</code>. Default is <code>crop-center</code>, and is the same as <code>crop</code>.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,h_500,fit_crop-top-right'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span>
+<span class="s1">'height'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span>
+<span class="s1">'fit'</span><span class="o">=&gt;</span><span class="s1">'crop-top-right'</span><span class="p">,</span>
+<span class="p">));</span>
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;" src=" http://api.newtimebox.com/Resize_engine/w_300,h_300,fit_crop-top-right/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_300,h_300,fit_crop-left/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Fit - Crop Focal Point</b></p>
+
+<p>In addition to the crop position, you can be more specific about the exact crop position using a focal point. This is defined using two offset percentages: <code>crop-x%-y%</code>.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,h_500,fit_crop-25-25'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span>
+<span class="s1">'height'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span>
+<span class="s1">'fit'</span><span class="o">=&gt;</span><span class="s1">'crop-25-25'</span><span class="p">,</span>
+<span class="p">));</span>
+
+</code></pre>
+<p><img  style="display:block;margin:0px auto;text-align:center;" src=" http://api.newtimebox.com/Resize_engine/w_500,h_500,fit_crop-25-25/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Crop <code>crop</code></b></p>
+
+<p>Crops the image to specific dimensions prior to any other resize operations. Required format: width,height,x,y.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'crop_(100,100,300,300)'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'crop'</span><span class="o">=&gt;</span><span class="s1">'100,100,300,300'</span><span class="p">,</span>
+<span class="p">));</span>
+
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/crop_(100,100,300,300)/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Fit - other values</b>
+Sets how the image is fitted to its target dimensions.</p>
+
+<p>Accepts:</p>
+
+<p><code>contain</code>: Default. Resizes the image to fit within the width and height boundaries without cropping, distorting or altering the aspect ratio.</p>
+
+<p><code>max</code>: Resizes the image to fit within the width and height boundaries without cropping, distorting or altering the aspect ratio, and will also not increase the size of the image if it is smaller than the output size.</p>
+
+<p><code>fill</code>: Resizes the image to fit within the width and height boundaries without cropping or distorting the image, and the remaining space is filled with the background color. The resulting image will match the constraining dimensions.</p>
+
+<p><code>stretch</code>: Stretches the image to fit the constraining dimensions exactly. The resulting image will fill the dimensions, and will not maintain the aspect ratio of the input image.</p>
+
+<p><code>crop</code>: Resizes the image to fill the width and height boundaries and crops any excess image data. The resulting image will match the width and height constraints without distorting the image. See the crop page for more information.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">resizzer_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_200,h_500,fit_stretch'</span><span class="p">);</span>
+<span class="c1">//note:Also, you can use  array form as below
+</span><span class="k">echo</span> <span class="nx">resizzer_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">,</span><span class="s1">'height'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'fit'</span><span class="o">=&gt;</span><span class="s1">'stretch'</span><span class="p">,</span>
+
+<span class="p">));</span>
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_200,h_500,fit_stretch/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Width and Height <code>w</code>,<code>h</code></b></p>
+
+<p>Sets the width and height of the image, in pixels.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_300,h_300'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">300</span><span class="p">,</span><span class="s1">'height'</span><span class="o">=&gt;</span><span class="mi">300</span><span class="p">,</span>
+<span class="p">));</span>
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_200,h_200/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Device pixel ratio <code>dpr</code></b></p>
+
+<p>The device pixel ratio is used to easily convert between CSS pixels and device pixels. This makes it possible to display images at the correct pixel density on a variety of devices such as Apple devices with Retina Displays and Android devices. You must specify either a width, a height, or both for this parameter to work. The default is 1. The maximum value that can be set for dpr is 8.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_300,dpr_2'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">300</span><span class="p">,</span><span class="s1">'dpr'</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">,</span>
+<span class="p">));</span>
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_300,dpr_2/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Brightness <code>bri</code></b></p>
+
+<p>Adjusts the image brightness. Use values between -100 and +100, where 0 represents no change.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,bri_-25'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'bri'</span><span class="o">=&gt;</span><span class="s1">'-25'</span><span class="p">,</span>
+<span class="p">));</span>
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_500,bri_-25/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Contrast <code>con</code></b></p>
+
+<p>Adjusts the image contrast. Use values between <code>-100</code> and <code>+100</code>, where <code>0</code> represents no change.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,con_25'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'con'</span><span class="o">=&gt;</span><span class="s1">'25'</span><span class="p">,</span>
+<span class="p">));</span>
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_500,con_25/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Gamma <code>gam</code></b></p>
+
+<p>Adjusts the image gamma. Use values between <code>0.1</code> and <code>9.99</code>.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,gam_1.5'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'gam'</span><span class="o">=&gt;</span><span class="s1">'1.5'</span><span class="p">,</span>
+<span class="p">));</span>
+
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_500,gam_1.5/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Sharpen <code>sharp</code></b></p>
+
+<p>Sharpen the image. Use values between <code>0</code> and <code>100</code>.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,sharp_15'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'sharp'</span><span class="o">=&gt;</span><span class="s1">'15'</span><span class="p">,</span>
+<span class="p">));</span>
+
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_500,sharp_15/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Blur <code>blur</code></b></p>
+
+<p>Adds a blur effect to the image. Use values between <code>0</code> and <code>100</code>.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,blur_5'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'blur'</span><span class="o">=&gt;</span><span class="s1">'5'</span><span class="p">,</span>
+<span class="p">));</span>
+
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_500,blur_5/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<aside class="notice">
+Performance can be intensive on larger amounts of blur.
+</aside>
+
+<p><b>Pixelate <code>pixel</code></b></p>
+
+<p>Applies a pixelation effect to the image. Use values between <code>0</code> and <code>1000</code>.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,pixel_5'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'pixel'</span><span class="o">=&gt;</span><span class="s1">'5'</span><span class="p">,</span>
+<span class="p">));</span>
+
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_500,pixel_5/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Filter <code>filt</code></b></p>
+
+<p>Applies a filter effect to the image. Accepts <code>greyscale</code> or <code>sepia</code>.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,filt_sepia'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'filt'</span><span class="o">=&gt;</span><span class="s1">'sepia'</span><span class="p">,</span>
+<span class="p">));</span>
+
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_500,filt_sepia/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Background <code>bg</code></b></p>
+
+<p>Sets the background color of the image. See <a href="#colors">colors</a> for more information on the available color formats.</p>
+<pre class="highlight php tab-php"><code>
+<span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,bg_black'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'bg'</span><span class="o">=&gt;</span><span class="s1">'black'</span><span class="p">,</span>
+<span class="p">));</span>
+
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine//w_500,bg_black/159997928e8a747283882538370as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=25106f9ee0c6cbd763fb293096c94d75" ></p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,bg_lime'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'bg'</span><span class="o">=&gt;</span><span class="s1">'line'</span><span class="p">,</span>
+<span class="p">));</span>
+
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine//w_500,bg_lime/159997928e8a747283882538370as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=25106f9ee0c6cbd763fb293096c94d75" ></p>
+
+<p><b>Border <code>border</code></b></p>
+
+<p>Add a border to the image. Required format: <code>width,color,method</code>. </p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,border_(10,5000,overlay)'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'border'</span><span class="o">=&gt;</span><span class="s1">'10,5000,overlay'</span><span class="p">,</span>
+<span class="p">));</span>
+
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_500,border_(10,5000,overlay)/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Method</b></p>
+
+<p>Sets how the border will be displayed. Available options:</p>
+
+<p><code>overlay</code>: Place border on top of image (default).</p>
+
+<p><code>shrink</code>: Shrink image within border (canvas does not change).</p>
+
+<p><code>expand</code>: Expands canvas to accommodate border.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,border_(10,FFCC33,expand)'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'border'</span><span class="o">=&gt;</span><span class="s1">'10,FFCC33,expand'</span><span class="p">,</span>
+<span class="p">));</span>
+
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_500,border_(10,FFCC33,expand)/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Quality <code>q</code></b></p>
+
+<p>Defines the quality of the image. Use values between <code>0</code> and <code>100</code>. Defaults to <code>90</code>. Only relevant if the format is set to <code>jpg</code>. </p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,q_6'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'quality'</span><span class="o">=&gt;</span><span class="s1">'6'</span><span class="p">,</span>
+<span class="p">));</span>
+
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_500,q_6/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+
+<p><b>Format <code>fm</code></b></p>
+
+<p>Encodes the image to a specific format. Accepts <code>jpg</code>, <code>pjpg</code> (progressive <code>jpeg</code>), <code>png</code> or <code>gif</code>. Defaults to <code>jpg</code>.</p>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,fm_png'</span><span class="p">);</span>
+
+<span class="c1">//or you can use array manipulation instead
+</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+<span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">500</span><span class="p">,</span><span class="s1">'fm'</span><span class="o">=&gt;</span><span class="s1">'png'</span><span class="p">,</span>
+<span class="p">));</span>
+
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.newtimebox.com/Resize_engine/w_500,fm_png/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<h2 id='responsive-images'>Responsive Images</h2>
+<p>You can use <code>dpr</code>param to get responsive images for each device by using <code>srcset attribute of img tag</code>.</p>
+<pre class="highlight php tab-php"><code>
+<span class="nt">&lt;img</span>
+  <span class="na">srcset=</span><span class="s">"/dpr_1/asset.png 1x, /dpr_2/asset-2x.png 2x, /dpr_3/asset-3x.png 3x"</span>
+  <span class="na">src=</span><span class="s">"asset.png"</span>
+<span class="nt">&gt;</span>
+</code></pre><pre class="highlight php tab-php"><code>
+lets use dpr <span class="nt">&lt;br/&gt;</span>
+
+<span class="nt">&lt;img</span>
+  <span class="na">srcset=</span><span class="s">"http://api.newtimebox.com/Resize_engine/w_500,dpr_1/
+159988fb0bde60750108082802as123138.jpg?
+&amp;connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 1x,
+http://api.newtimebox.com/Resize_engine/w_500
+,dpr_1/159988fb0bde60750108082802as123138.jpg
+?&amp;connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 2x,
+http://api.newtimebox.com/Resize_engine/w_500,dpr_1/
+159988fb0bde60750108082802as123138.jpg?&amp;connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 3x"</span>
+  <span class="na">src=</span><span class="s">"http://api.newtimebox.com/Resize_engine/w_500/
+
+159988fb0bde60750108082802as123138.jpg?&amp;connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577"</span>
+<span class="nt">&gt;</span>
+
+</code></pre>
+<p><img style="display:block;margin:0px auto;text-align:center;" srcset="http://api.newtimebox.com/Resize_engine/w_500,dpr_3/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 1x, http://api.newtimebox.com/Resize_engine/w_500,dpr_2/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 2x, http://api.newtimebox.com/Resize_engine/w_500,dpr_3/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 3x" src=" http://api.newtimebox.com/Resize_engine/w_500,fm_png/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577" ></p>
+<h1 id='upload'>Upload</h1>
+<p>There are 2 ways to upload images to our service: UI and Server side code.</p>
+<h2 id='upload-button'>Upload Button</h2>
+<p>We are providing <code>Upload Button</code> with rich functionalities which support drag and drop upload (link, image tag, image from user&#39;s operation system) and uploading multiple files.</p>
+
+<p>You can create our upload button with php or html.</p>
+
+<p>After you create upload button, you should call <code>Resizzer::get_uploader_scripts</code> php function which will load our javascript library to activate the button. After activation, your <code>input</code> will be converted to <code>div</code> which will be actual <code>upload button</code> with all functionalities. <code>Upload Button</code> means the button that our javascript library created.</p>
+
+<p>You can use attributes chart below to create Upload button with html or php. If you use php, you should pass them as an array. If you use html, you should define them as an html attribute in the input tag.</p>
+
+<p>You can customize <code>Upload Button</code> and <code>Drag Area</code> with attributes of the input you just created.
+<code>Drag Area</code> is area which will appear when user drags some items on the browser.</p>
+
+<blockquote>
+<p>To create upload button with php you can use following code:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="c1">//below is an array of attributes for the input which will accept files.
+</span><span class="nv">$button_input_attr</span><span class="o">=</span><span class="k">array</span><span class="p">(</span><span class="s2">"newtimebox-uploader-id"</span><span class="o">=&gt;</span><span class="s2">"myUploadId"</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">create_upload_button</span><span class="p">(</span><span class="nv">$button_input_attr</span><span class="p">);</span>
+<span class="c1">//after you create button in order to activate it use code below
+</span><span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_uploader_scripts</span><span class="p">();</span>
+
+</code></pre>
+<blockquote>
+<p>To create upload button with html you can use following code:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="c">&lt;!---There should be a container div--&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+<span class="c">&lt;!---class attr should contain newtimebox-oos-image-uploader--&gt;</span>
+<span class="nt">&lt;input</span> 
+<span class="na">newtimebox-uploader-id=</span><span class="s">"myUploadId"</span>
+<span class="na">class=</span><span class="s">"newtimebox-oos-image-uploader"</span>
+<span class="na">type=</span><span class="s">"file"</span> <span class="na">name=</span><span class="s">"file"</span> <span class="na">accept=</span><span class="s">"image/*"</span> 
+<span class="na">multiple=</span><span class="s">"true"</span>
+<span class="na">buttonStyle=</span><span class="s">""</span> <span class="na">buttonAttr=</span><span class="s">""</span> <span class="na">buttonClass=</span><span class="s">""</span> <span class="na">dragAreaStyle=</span><span class="s">""</span>
+<span class="na">DragAreaAttr=</span><span class="s">""</span> <span class="na">dragAreaClass=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+<span class="cp">&lt;?php</span>
+
+<span class="c1">//after you create button in order to activate it use below code
+</span><span class="nx">Resizzer</span><span class="o">::</span><span class="na">get_uploader_scripts</span><span class="p">();</span>
+
+</code></pre>
+<blockquote>
+<p>Each attr has a meaning, you can read about each of them.</p>
+</blockquote>
+
+<p>Meaning of each input attributes</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Accepts</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>newtimebox-uploader-id</td>
+<td>unique string for each button</td>
+<td>if you have multiple upload buttons, it will help you and our library identify buttons. For example, <code>newtimebox_OOS_uploader.get_uploaded_file_names(&#39;string that you have passed to newtimebox-uploader-id&#39;);</code>, this function will return current uploaded file names related with the id that passes to its paramater.</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td>true or false</td>
+<td>if it is true, upload button can accept more than one file at the same time otherwise, only one.</td>
+</tr>
+<tr>
+<td>image-uploader-count-limit</td>
+<td>number</td>
+<td>maximum how many files <code>Upload Button</code> can accept at the same time.</td>
+</tr>
+<tr>
+<td>buttonStyle</td>
+<td>css string</td>
+<td><code>Upload Button</code>  style attribute. E.g. <code>color:blue;padding:20px;background:white;</code></td>
+</tr>
+<tr>
+<td>buttonAttr</td>
+<td>string</td>
+<td>Custom attr of <code>Upload Button</code>. E.g. <code>mycustomerAttr=true exampleattr=&quot;example value&quot;</code></td>
+</tr>
+<tr>
+<td>buttonClass</td>
+<td>string</td>
+<td>add new custom classes to <code>Upload Button</code></td>
+</tr>
+<tr>
+<td>dragAreaStyle</td>
+<td>css string</td>
+<td><code>Drag Area</code>  style attribute. To see examples please look at buttonStyle above.</td>
+</tr>
+<tr>
+<td>dragAreaAttr</td>
+<td>string</td>
+<td>Custom attrs for <code>Drag Area</code>. To see examples please look at buttonAttr above.</td>
+</tr>
+<tr>
+<td>dragClass</td>
+<td>string</td>
+<td>add new custom classes to <code>Drag Area</code></td>
+</tr>
+</tbody></table>
+<h3 id='usage-of-upload-button'>Usage of Upload Button</h3>
+<p>We have created a javascript library for you which was automatically loaded when you call <code>Resizzer::get_uploader_scripts();</code> function. You can use <code>newtimebox_OOS_uploader</code> class to control <code>Upload Button</code> behaviors and requests that it sent.</p>
+
+<p>When user chooses images or drag and drop them to <code>Upload Button</code>, user&#39;s browser will send those images to our servers. Then our servers will return response which contains file_name , mime_type, file_src and other useful information for you. You can check all response indexes in <a href="#upload-response">Upload Response</a> section.</p>
+
+<blockquote>
+<p>To manipulate new uploaded image URL you can use this code:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="nt">&gt;</span>
+
+<span class="nx">newtimebox_OOS_uploader</span><span class="p">.</span><span class="nx">set_response_url_params</span><span class="p">({</span>
+
+<span class="s1">'width'</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="s1">'height'</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="s1">'border'</span><span class="p">:</span><span class="s1">'(10,5000,overlay)'</span><span class="p">,</span>
+
+<span class="p">});</span>
+
+<span class="nt">&lt;/script&gt;</span>
+
+</code></pre>
+<p><b>How to get and manipulate new Uploaded Image Url</b></p>
+
+<p><code>newtimebox_OOS_uploader.set_response_url_params</code></span> will set manipulation params for <code>file_src</code> which will come with response and will represent URL for the uploaded image .(<a href="#" onclick="$('[custom_id=ReponseParams]').fadeToggle(200);return false;" >click to learn more</a>)</p>
+
+<p><span custom_id="ReponseParams" style="display:none" >When users upload an image, you probably want to show the preview of it to them. When user uploads the image, our servers will save it and return response. This response will contain <code>file_src</code> index which represents URL of the new uploaded image, so you can put this src to some image tags to show the user the new uploaded image preview. However, you will probably want it with specified <a href="#manipulation-params">manipulation params</a>. E.g. <code>width,height,crop,fit,blur and other effects</code>. But if you have set <code>secure</code> param (argument) to true in <code>Resizzer::connect</code> function (see <a href="#authentication">Authentication</a> ) you cannot manipulate it after the user uploaded it. To manipulate the image URL that user has uploaded recently, you should define manipulation params beforehand, so our servers will manipulate the image and then it will return the image with response. To do this you can use <code>newtimebox_OOS_uploader.set_response_url_params</code> function and can pass manipulation params as a javascript object.</span></p>
+<h3 id='how-to-control-upload-process'>How to control upload process</h3>
+<p>We are providing callback for each step in uploading process so you will be able to customize all processes easily.</p>
+
+<p>In javascript you can use functions of <code>newtimebox_OOS_uploader</code> javascript class.</p>
+
+<p>Meaning of params that will be used in chart:</p>
+
+<p><code>element</code> is the container of upload button  (in html code it is div that contains <code>Upload Button</code>)</p>
+
+<p><code>upload_count</code> - how many images the user has chosen</p>
+
+<p><code>index</code> - index of new  chosen image (for example, index of second uploaded image will be 2)</p>
+
+<p><code>percentComplete</code> - what percentage of process finished for uploading an image</p>
+
+<p><code>event</code> - come from xhr.upload.addEventListener(&quot;progress&quot;,function(<code>event</code>)). (If you will not use it or you didn&#39;t know what it is, you can ignore this part).</p>
+
+<p><code>data</code> - is response data from our server, you can see it in <a href="#upload-response">Upload Response section</a></p>
+
+<blockquote>
+<p>Following code is default behavior code to control uploading and you can also customize it:</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code>
+<span class="c1">//will be called after user selects image that he or she wants to upload</span>
+<span class="nx">newtimebox_OOS_uploader</span><span class="p">.</span><span class="nx">when_select</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">upload_count</span><span class="p">){</span>
+    <span class="c1">//inside is just example you can customize it</span>
+<span class="nx">when_select_default</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">upload_count</span><span class="p">);</span>
+<span class="c1">//your custom codes</span>
+<span class="p">});</span>
+
+<span class="c1">//will be called before each upload process begin for each image</span>
+<span class="nx">newtimebox_OOS_uploader</span><span class="p">.</span><span class="nx">when_upload_begin</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">,</span><span class="nx">upload_count</span><span class="p">){</span>
+    <span class="nx">when_upload_begin_default</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">,</span><span class="nx">upload_count</span><span class="p">);</span>
+<span class="c1">//your custom codes</span>
+<span class="p">});</span>
+
+<span class="c1">//will be called each time upload progress is finished </span>
+<span class="c1">//so you can show how many percent of image uploaded</span>
+<span class="nx">newtimebox_OOS_uploader</span><span class="p">.</span><span class="nx">when_upload_progress</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span><span class="nx">percentComplete</span><span class="p">,</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">){</span>
+    <span class="nx">when_upload_progress_deault</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span><span class="nx">percentComplete</span><span class="p">,</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">);</span>
+<span class="c1">//your custom codes</span>
+<span class="p">});</span>
+
+<span class="c1">//will fire after upload is finished  successfully when code is 200</span>
+<span class="nx">newtimebox_OOS_uploader</span><span class="p">.</span><span class="nx">when_upload_finish</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">){</span>
+    <span class="c1">//you need to check if data contains error index or not</span>
+    <span class="k">try</span><span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nx">when_upload_finish_default</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">);</span>
+<span class="c1">//your custom codes</span>
+
+<span class="p">});</span>
+
+
+<span class="c1">//will fire when upload is failed</span>
+<span class="nx">newtimebox_OOS_uploader</span><span class="p">.</span><span class="nx">when_upload_fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">){</span>
+    <span class="c1">//when upload response code is not 200</span>
+<span class="nx">when_upload_fail_default</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">);</span>
+<span class="c1">//your custom codes</span>
+
+<span class="p">});</span>
+
+
+</code></pre>
+<table><thead>
+<tr>
+<th>Function</th>
+<th>passed params</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>when_select</td>
+<td>element ,upload_count</td>
+<td>This will be called when user selects or drag and drops images.</td>
+</tr>
+<tr>
+<td>when_upload_begin</td>
+<td>element, index , upload_count</td>
+<td>it will be called for each image that begins to be uploaded.</td>
+</tr>
+<tr>
+<td>when_upload_progress</td>
+<td>event, percentComplete, element, index</td>
+<td>it will be called for each image in each process completed. You can use this function to get how many percentages of image uploaded, and you can create your custom progress bar.</td>
+</tr>
+<tr>
+<td>when_upload_finish</td>
+<td>data,element,index</td>
+<td>it will be called when uploading process is finished</td>
+</tr>
+<tr>
+<td>when_upload_fail</td>
+<td>element,index</td>
+<td>it will be called when upload failed and response code is not 200.</td>
+</tr>
+<tr>
+<td>get_uploaded_file_names</td>
+<td>newtimebox-uploader-id</td>
+<td>This function will return all uploaded file names related with <code>newtimebox-uploader-id</code>, you can see it in the chart which is on top of <a href="#upload-button">Upload Button</a> section.</td>
+</tr>
+</tbody></table>
+
+<p>If you didn&#39;t set callback functions chart above, default functions will work instead of them: <code>when_select_default</code>,<code>when_upload_begin_default</code>,
+<code>when_upload_progress_default</code>,<code>when_upload_finish_default</code>,<code>when_upload_fail_default</code>.</p>
+
+<p>If you want to customize uploading process, but also want to use default behaviors, you should call default functions and pass arguments(params) to them.</p>
+<h2 id='server-side-upload'>Server Side Upload</h2>
+<blockquote>
+<p>To upload an image use this code:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$file</span> <span class="o">=</span> <span class="s1">'Local path, URL or data Uri of Image'</span><span class="p">;</span>
+<span class="c1">//filename should contains extension!!
+</span><span class="nv">$data</span> <span class="o">=</span> <span class="nx">Resizzer</span><span class="o">::</span><span class="na">upload</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span><span class="k">array</span><span class="p">(</span><span class="s1">'filename'</span><span class="o">=&gt;</span><span class="s1">'Yourfilename.jpg'</span><span class="p">));</span>
+<span class="c1">//you can check upload is successful or not
+</span></code></pre>
+<blockquote>
+<p>To check errors use this code:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$data</span><span class="o">!==</span><span class="kc">false</span><span class="p">){</span>
+<span class="c1">//response is JSON
+</span>    <span class="k">if</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'error'</span><span class="p">]</span><span class="o">==</span><span class="kc">false</span><span class="p">){</span>
+    <span class="c1">//upload was successful
+</span>    <span class="c1">//you can save image name , to get the image name use the following code
+</span>    <span class="nv">$new_image_name</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'file_name'</span><span class="p">];</span>
+       <span class="k">echo</span> <span class="s2">"Upload was successfull, response is &lt;br/&gt;"</span><span class="p">;</span>
+       <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+      <span class="c1">//upload was failed
+</span>    <span class="c1">//To get error you can use below code
+</span>    <span class="k">echo</span> <span class="s1">'Error Message:'</span><span class="o">.</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'error_mes'</span><span class="p">]</span><span class="o">.</span><span class="s1">'&lt;br/&gt;
+          Error Code:'</span><span class="o">.</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'error_code'</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+
+<span class="c1">//upload was failed, response is not JSON
+//below function will return last reponse from `Curl` request
+</span> <span class="nb">var_dump</span><span class="p">(</span><span class="nx">Resizzer</span><span class="o">::</span><span class="na">getLastResponse</span><span class="p">());</span>
+
+<span class="p">}</span>
+
+</code></pre>
+<p>First you should finish <a href="#configuration">Configuration section</a> and <a href="#authentication">Authentication section</a> and include them to continue.
+You can use Upload function from our API library. E.g. you can set server side upload script in the file which accepts uploaded images from your users in your server.
+It takes 2 params: <code>String file</code>, <code>array params</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file</td>
+<td>required</td>
+<td>You should pass path, URL or data uri of image.E.g. this parameter can be one of these:<code>/home/cat.jpg</code>, <code>http://www.example.com/image.jpg</code>, <code>data:image/jpg;base64,RASDHKLSJDHKLASHDKLJASHDSexample</code>.</td>
+</tr>
+<tr>
+<td>params</td>
+<td>array()</td>
+<td>you can pass the image name with array params.<code>array(&#39;filename&#39;=&gt;&#39;image_name&#39;)</code></td>
+</tr>
+</tbody></table>
+
+<p>You can use this code to upload images from your users and also integrate your existing images with our service.</p>
+
+<p>If response equals to <code>false</code>, it means upload process is failed, otherwise upload process was successful.You learn more information in <a href="#upload-response">Upload Response section</a>.</p>
+<h2 id='upload-response'>Upload Response</h2>
+<p><code>filename</code> is <code>image_name</code>, so you can save it in database after you get response.</p>
+<h3 id='success-response'>Success Response</h3>
+<blockquote>
+<p>If upload was successfull it will return a multidimensional array form of following JSON response.</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+</span><span class="s2">"error"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+</span><span class="s2">"file_name"</span><span class="p">:</span><span class="s2">"filename of image"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"size"</span><span class="p">:</span><span class="mi">6000</span><span class="p">,</span><span class="w">
+</span><span class="s2">"file_extension"</span><span class="p">:</span><span class="s2">"jpg"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"mime_type"</span><span class="p">:</span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"image_dimensions"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"height"</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"width"</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span><span class="s2">"file_src"</span><span class="p">:</span><span class="s2">"full URL of image, so you can use it in image tag as src"</span><span class="p">,</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p>Below is response from our servers for successfully uploaded images.</p>
+
+<table><thead>
+<tr>
+<th>Index</th>
+<th>type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file_name</td>
+<td>string</td>
+<td>If you didn&#39;t spesified filename in server side upload, it will be automatically generated and  it will return filename with this index. If filename is not unique, our service will add version to the end of the filename. E.g. <code>Yourfilename.jpg(1)</code>. If you upload file with our <code>Upload Button</code>, file name always will be generated.</td>
+</tr>
+<tr>
+<td>size</td>
+<td>int</td>
+<td>size of image with bytes</td>
+</tr>
+<tr>
+<td>file_extension</td>
+<td>string</td>
+<td>with which extension file was uploaded.<code>Note:if uploaded image name doesn&#39;t contain an extension, it can return filename</code></td>
+</tr>
+<tr>
+<td>mime_type</td>
+<td>string</td>
+<td>mime type of file that uploaded. For example, &quot;image/jpeg&quot;</td>
+</tr>
+<tr>
+<td>image_dimensions</td>
+<td>array</td>
+<td>array will contain 2 params:<code>height</code> and <code>width</code> of the image.</td>
+</tr>
+<tr>
+<td>file_src</td>
+<td>string</td>
+<td>you can use this in html image tag as src attribute. If you are using our <a href="#upload-button">UI Upload Button</a> (with Javascript), you need to know that <code>set_response_url_params</code> function will affect this response index, so it will return manipulated form of the image that you required in that function.</td>
+</tr>
+</tbody></table>
+<h3 id='error-response'>Error Response</h3><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+</span><span class="s2">"error"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+</span><span class="s2">"error_code"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="s2">"error_mes"</span><span class="p">:</span><span class="s2">"It is not actual image"</span><span class="p">,</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Index</th>
+<th>type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>error</td>
+<td>boolean</td>
+<td>This will be true in error response.</td>
+</tr>
+<tr>
+<td>error_code</td>
+<td>int</td>
+<td>You can see the meaning of errors in <a href="#error-codes">Error codes</a> .</td>
+</tr>
+<tr>
+<td>error_mes</td>
+<td>int</td>
+<td>give a message which describes error.</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1><h2 id='error-codes'>Error codes</h2>
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>User used <code>drag and drop</code> method to upload an image and dropped the text which is not a link.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>User didn&#39;t upload actual image.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>File that user uploaded cannot be moved. The reason might be user wanted to upload malicious script and our system security prevented it.</td>
+</tr>
+</tbody></table>
+<h2 id='errors-for-image-processing'>Errors for image processing</h2>
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>secure token is not true</td>
+<td>secure token is <code>GET</code> param which was generated from combination of your API SECRET KEY and manipulations params. Secure token only will be required when you set <code>secure</code> parameter to true in <code>Resizzer::connect</code> method (See <a href="#authentication">Authentication</a>). This error happens when user tries to manipulate image from URL bar in <code>secure</code> mode.</td>
+</tr>
+<tr>
+<td>connect_key is not valid</td>
+<td><code>connect_key</code> is <code>GET</code> param which was generated by response each x hour that you defined in <code>Resizzer::connect</code> method (See <a href="#authentication">Authentication</a>).This method sends request to our server in each X hour that you defined and our server will generate <code>connect_key</code> which will be valid for X hour. This error can happen when someone changes your <code>connect_key</code> from URL bar or use old one. Note if you have sub domain you should include our library instead of duplicate it. When you duplicate our library you can get this error. If you got this error, you should include our library from one point, then you should clear inside of key.txt in our library which is located at ResizzerAPI/storage/key.txt.</td>
+</tr>
+<tr>
+<td>Could not find image</td>
+<td>Our server couldn&#39;t find image that you requested in our server and in your server (if you defined <code>web_folder_url</code> <a href="#web-folders">Web folders</a> ).</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+Your project should contain only one copy of our library, otherwise you will get <code> connect key is not valid error</code>
+ Note if you have sub domain you should include our library instead of duplicate it. When you duplicate our library you can get <code>connect key</code>. If you got this error, you should include our library from one point, then you should clear inside of key.txt in our library which is located at ResizzerAPI/storage/key.txt.
+</aside>
+<h1 id='colors'>Colors</h1>
+<p>Resizzer supports a variety of color formats. In addition to the 140 color names (listed below) supported by all modern browsers, Resizzer accepts hexadecimal RGB and RBG alpha formats.</p>
+
+<p>Hexadecimal</p>
+
+<p>3 digit RGB: <code>CCC</code></p>
+
+<p>4 digit ARGB (alpha): <code>5CCC</code></p>
+
+<p>6 digit RGB: <code>CCCCCC</code></p>
+
+<p>8 digit ARGB (alpha): <code>55CCCCCC</code></p>
+
+<p>Color names</p>
+
+<p><code>aliceblue</code></p>
+
+<p><code>antiquewhite</code></p>
+
+<p><code>aqua</code></p>
+
+<p><code>aquamarine</code></p>
+
+<p><code>azure</code></p>
+
+<p><code>beige</code></p>
+
+<p><code>bisque</code></p>
+
+<p><code>black</code></p>
+
+<p><code>blanchedalmond</code></p>
+
+<p><code>blue</code></p>
+
+<p><code>blueviolet</code></p>
+
+<p><code>brown</code></p>
+
+<p><code>burlywood</code></p>
+
+<p><code>cadetblue</code></p>
+
+<p><code>chartreuse</code></p>
+
+<p><code>chocolate</code></p>
+
+<p><code>coral</code></p>
+
+<p><code>cornflowerblue</code></p>
+
+<p><code>cornsilk</code></p>
+
+<p><code>crimson</code></p>
+
+<p><code>cyan</code></p>
+
+<p><code>darkblue</code></p>
+
+<p><code>darkcyan</code></p>
+
+<p><code>darkgoldenrod</code></p>
+
+<p><code>darkgray</code></p>
+
+<p><code>darkgreen</code></p>
+
+<p><code>darkkhaki</code></p>
+
+<p><code>darkmagenta</code></p>
+
+<p><code>darkolivegreen</code></p>
+
+<p><code>darkorange</code></p>
+
+<p><code>darkorchid</code></p>
+
+<p><code>darkred</code></p>
+
+<p><code>darksalmon</code></p>
+
+<p><code>darkseagreen</code></p>
+
+<p><code>darkslateblue</code></p>
+
+<p><code>darkslategray</code></p>
+
+<p><code>darkturquoise</code></p>
+
+<p><code>darkviolet</code></p>
+
+<p><code>deeppink</code></p>
+
+<p><code>deepskyblue</code></p>
+
+<p><code>dimgray</code></p>
+
+<p><code>dodgerblue</code></p>
+
+<p><code>firebrick</code></p>
+
+<p><code>floralwhite</code></p>
+
+<p><code>forestgreen</code></p>
+
+<p><code>fuchsia</code></p>
+
+<p><code>gainsboro</code></p>
+
+<p><code>ghostwhite</code></p>
+
+<p><code>gold</code></p>
+
+<p><code>goldenrod</code></p>
+
+<p><code>gray</code></p>
+
+<p><code>green</code></p>
+
+<p><code>greenyellow</code></p>
+
+<p><code>honeydew</code></p>
+
+<p><code>hotpink</code></p>
+
+<p><code>indianred</code></p>
+
+<p><code>indigo</code></p>
+
+<p><code>ivory</code></p>
+
+<p><code>khaki</code></p>
+
+<p><code>lavender</code></p>
+
+<p><code>lavenderblush</code></p>
+
+<p><code>lawngreen</code></p>
+
+<p><code>lemonchiffon</code></p>
+
+<p><code>lightblue</code></p>
+
+<p><code>lightcoral</code></p>
+
+<p><code>lightcyan</code></p>
+
+<p><code>lightgoldenrodyellow</code></p>
+
+<p><code>lightgray</code></p>
+
+<p><code>lightgreen</code></p>
+
+<p><code>lightpink</code></p>
+
+<p><code>lightsalmon</code></p>
+
+<p><code>lightseagreen</code></p>
+
+<p><code>lightskyblue</code></p>
+
+<p><code>lightslategray</code></p>
+
+<p><code>lightsteelblue</code></p>
+
+<p><code>lightyellow</code></p>
+
+<p><code>lime</code></p>
+
+<p><code>limegreen</code></p>
+
+<p><code>linen</code></p>
+
+<p><code>magenta</code></p>
+
+<p><code>maroon</code></p>
+
+<p><code>mediumaquamarine</code></p>
+
+<p><code>mediumblue</code></p>
+
+<p><code>mediumorchid</code></p>
+
+<p><code>mediumpurple</code></p>
+
+<p><code>mediumseagreen</code></p>
+
+<p><code>mediumslateblue</code></p>
+
+<p><code>mediumspringgreen</code></p>
+
+<p><code>mediumturquoise</code></p>
+
+<p><code>mediumvioletred</code></p>
+
+<p><code>midnightblue</code></p>
+
+<p><code>mintcream</code></p>
+
+<p><code>mistyrose</code></p>
+
+<p><code>moccasin</code></p>
+
+<p><code>navajowhite</code></p>
+
+<p><code>navy</code></p>
+
+<p><code>oldlace</code></p>
+
+<p><code>olive</code></p>
+
+<p><code>olivedrab</code></p>
+
+<p><code>orange</code></p>
+
+<p><code>orangered</code></p>
+
+<p><code>orchid</code></p>
+
+<p><code>palegoldenrod</code></p>
+
+<p><code>palegreen</code></p>
+
+<p><code>paleturquoise</code></p>
+
+<p><code>palevioletred</code></p>
+
+<p><code>papayawhip</code></p>
+
+<p><code>peachpuff</code></p>
+
+<p><code>peru</code></p>
+
+<p><code>pink</code></p>
+
+<p><code>plum</code></p>
+
+<p><code>powderblue</code></p>
+
+<p><code>purple</code></p>
+
+<p><code>rebeccapurple</code></p>
+
+<p><code>red</code></p>
+
+<p><code>rosybrown</code></p>
+
+<p><code>royalblue</code></p>
+
+<p><code>saddlebrown</code></p>
+
+<p><code>salmon</code></p>
+
+<p><code>sandybrown</code></p>
+
+<p><code>seagreen</code></p>
+
+<p><code>seashell</code></p>
+
+<p><code>sienna</code></p>
+
+<p><code>silver</code></p>
+
+<p><code>skyblue</code></p>
+
+<p><code>slateblue</code></p>
+
+<p><code>slategray</code></p>
+
+<p><code>snow</code></p>
+
+<p><code>springgreen</code></p>
+
+<p><code>steelblue</code></p>
+
+<p><code>tan</code></p>
+
+<p><code>teal</code></p>
+
+<p><code>thistle</code></p>
+
+<p><code>tomato</code></p>
+
+<p><code>turquoise</code></p>
+
+<p><code>violet</code></p>
+
+<p><code>wheat</code></p>
+
+<p><code>white</code></p>
+
+<p><code>whitesmoke</code></p>
+
+<p><code>yellow</code></p>
+
+<p><code>yellowgreen</code></p>
+<h1 id='examples'>Examples</h1>
+<p>To see examples you can look at <a href="#quick-start">Quick Start section</a>.
+To see How to manipulate images you can look at <a href="#usage-of-manipulation-params">Usage of manipulation params</a>.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="php">php</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
