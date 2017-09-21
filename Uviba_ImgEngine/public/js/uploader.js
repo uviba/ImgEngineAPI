@@ -1,34 +1,4 @@
-//+"&sub_domain_req=true" var
-$.chunky = function(file, name,path){        
-    var loaded = 0;
-    var step = 1048//1024*1024; size of one chunk
-    var total = file.size;  // total size of file
-    var start = 0;          // starting position
-    var reader = new FileReader();
-    var blob = file.slice(start,step); //a single chunk in starting of step size
-    reader.readAsBinaryString(blob);   // reading that chunk. when it read it, onload will be invoked
 
-    reader.onload = function(e){            
-        var d = {file:reader.result}
-        $.ajax({
-            url:path,
-            type:"POST", 
-            data:d                     // d is the chunk got by readAsBinaryString(...)
-        }).done(function(r){           // if 'd' is uploaded successfully then ->
-                $('.record_reply_g').html(r);   //updating status in html view
-
-                loaded += step;                 //increasing loaded which is being used as start position for next chunk
-                $('.upload_rpogress').html((loaded/total) * 100);
-
-                if(loaded <= total){            // if file is not completely uploaded
-                    blob = file.slice(loaded,loaded+step);  // getting next chunk
-                    reader.readAsBinaryString(blob);        //reading it through file reader which will call onload again. So it will happen recursively until file is completely uploaded.
-                } else {                       // if file is uploaded completely
-                    loaded = total;            // just changed loaded which could be used to show status.
-                }
-            })              
-        };
-}
  function uviba_OOS_uploader(){
  	
 
@@ -560,7 +530,7 @@ $(function(){
 
 
 
-$('head').prepend('<style>.uviba-oos-image-drop{display:none;border:2px dashed #4773dc;color:#5882ff;text-align:center;z-index:12;background:#f1f1f1;padding:14px;border-radius:2px;width:129px;margin: 10px auto;}.uviba-oos-image-uploader-button{text-align:center;padding:7px;border:1px solid #3086f5;background:#3086f5;color:#fff;width:123px;border-radius:2px;cursor:pointer;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;margin:10px auto;}.uviba-oos-image-uploader-button:active{box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.uviba-oos-image-uploader-button:hover{background:#5198f3;border-color:#5198f3}</style>');
+$('head').prepend('<style>.uviba-oos-image-drop{display:none;border:2px dashed #4773dc;color:#5882ff;text-align:center;z-index:12;background:#f1f1f1;padding:14px;border-radius:2px;width:129px;margin: 10px auto;}.uviba-oos-image-uploader-button{text-align:center;padding:5px;border:1px solid #3086f5;background:#3086f5;color:#fff;width:123px;border-radius:2px;cursor:pointer;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;margin:10px auto;}.uviba-oos-image-uploader-button:active{box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.uviba-oos-image-uploader-button:hover{background:#5198f3;border-color:#5198f3}</style>');
 }
 
 if(!window.jQuery)
@@ -573,6 +543,9 @@ if(!window.jQuery)
 }else{
 	uviba_uploader_callback();
 }
+
+
+
 
 
 
