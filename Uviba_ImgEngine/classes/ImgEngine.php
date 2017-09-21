@@ -289,7 +289,21 @@ public static function is_auth(){
 		}
 	}
 
+//download file to own server
 
+public static function download($file,$new_path,$filename=''){
+		
+		if(trim($filename)==''){
+			$filename=uniqid().time().'.jpg';
+		}
+	$res = self::upload($file,array('filename'=>$filename,'download_to_own'=>true,'own_path'=>$new_path));
+	if($res!=false){
+		return $filename;
+	}
+		return false;
+	
+
+}
 
 // Upload
 
@@ -298,6 +312,12 @@ public static function upload($file_path,$params=array()){
   	$ch = curl_init();
   	$data=array();
   	$tempFileFlag=false;$tmpfname='';
+  	$download_to_own=false;
+  	if(isset($params['download_to_own'])){
+  		if($params['download_to_own']===true){
+  			$download_to_own=true;
+  		}
+  	}
   	//false yollasan bele orda serverde problem cixir
   	//$data['upload_filename']=false;
   	$filename = 'filename.png';
@@ -327,39 +347,62 @@ if($img===false){
 	
 	ImgEngine::give_error();
 }
-$tmpfname = tempnam("/tmp", "UL_IMAGE");
-@file_put_contents($tmpfname, $img);
+
+
+//if it their server just put contents
+if($download_to_own==false){
+	$tmpfname = tempnam("/tmp", "UL_IMAGE");
+}else{
+	$tmpfname = $params['own_path'];
+}
+if(!is_writable($tmpfname)){
+	ImgEngine::give_error(0,'upload folder is not writable');
+}
+$put_content_success = @file_put_contents($tmpfname.'/'.$filename, $img) or false;
 $file_path=$tmpfname;
 	$tempFileFlag=true;
   	}
   	//echo$tmpfname;
 
 
+  	if($download_to_own===false){
   		//only will work if php version supports CurlFile!!!
-	$data['file'] = new CurlFile($file_path, 'image/jpg',$filename );
-  	
-  	
-	 
-	curl_setopt($ch, CURLOPT_URL, Uviba_UPLOAD_Url.'?connect_key='.self::$instance->connect_key);
-	curl_setopt($ch, CURLOPT_POST, 1);
-	//CURLOPT_SAFE_UPLOAD defaulted to true in 5.6.0
-	//So next line is required as of php >= 5.6.0
-	curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	$result = curl_exec($ch);
-	//echo($result);exit;
-	if($tempFileFlag===true){
-		if(file_exists($tmpfname)){
-			unlink($tmpfname);
+		$data['file'] = new CurlFile($file_path, 'image/jpg',$filename );
+	  	
+	  	
+		 
+		curl_setopt($ch, CURLOPT_URL, Uviba_UPLOAD_Url.'?connect_key='.self::$instance->connect_key);
+		curl_setopt($ch, CURLOPT_POST, 1);
+		//CURLOPT_SAFE_UPLOAD defaulted to true in 5.6.0
+		//So next line is required as of php >= 5.6.0
+		curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$result = curl_exec($ch);
+		//var_dump(curl_error($ch));
+		self::$instance->last_response=$result;
+		//echo($result);exit;
+		if($tempFileFlag===true){
+			if(file_exists($tmpfname)){
+				unlink($tmpfname);
+			}
+		}
+		//eger ozune yuklemirse
+		//self::$instance->last_response=$result;
+		if(self::$instance->isJson($result)){
+					$data_ar = json_decode($result,true);
+					//check errors in data_ar
+			return $data_ar;
+		}
+  	}else{
+		//download edirse ozune yukleyirse
+		if($put_content_success!=false){
+			return true;
 		}
 	}
-	self::$instance->last_response=$result;
-	if(self::$instance->isJson($result)){
-				$data_ar = json_decode($result,true);
-				//check errors in data_ar
-		return $data_ar;
-	}
+
 	return false;
   }
 
