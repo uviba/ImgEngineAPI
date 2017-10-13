@@ -210,7 +210,7 @@ $file_path='http://'.$_SERVER['HTTP_HOST'].'/'.$file_path;
 	public static function get_image_url($image_name,$manipulate_params='',$url_params=''){
 		//for Resize Engine
 		$send_image_with_get=false;
-		if(urldecode($image_name)!=$image_name){
+		if(urlencode($image_name)!=$image_name){
 			$send_image_with_get=true;
 		}
 		if(is_array($manipulate_params)){
