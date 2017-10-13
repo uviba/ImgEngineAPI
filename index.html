@@ -324,12 +324,14 @@ Welcome to the Uviba - ImgEngine API! ImgEngine is one of the service of Uviba w
 <h1 id='quick-start'>Quick Start</h1>
 <p>In this section you can see quick examples. In 5 minute you will be able to use our service easily. </p>
 <h2 id='setup'>Setup</h2>
-<p>Download <a href="https://github.com/uviba/ImgEngineAPI/archive/master.zip" target="_blank" >library</a> and include autoload.php file inside of it to your project. To learn how to do this you can see <a href="#configuration">Configuration section</a>.</p>
+<p>Download <a href="https://github.com/uviba/ImgEngineAPI/archive/master.zip" target="_blank" >library</a> and use <code>php</code> to include autoload.php file (in the library) to your project. To learn how to do this you can see <a href="#configuration">Configuration section</a>.</p>
 <pre class="highlight php tab-php"><code>
 <span class="cp">&lt;?php</span>
 <span class="k">require</span> <span class="s1">'path/to/Uviba_ImgEngine/autoload.php'</span><span class="p">;</span>
 </code></pre>
 <p>Auth with your secret key. Follow steps in begining of <a href="#authentication">Authentication section</a>;</p>
+
+<p>You can use <a href="#web-folders">Web Folders</a> which you just define url of your existing images and you will be able to manipulate them automatically without needed to upload them to our service.</p>
 <pre class="highlight php tab-php"><code>
 <span class="cp">&lt;?php</span>
 <span class="nv">$secret_key</span><span class="o">=</span><span class="s1">'Your_SECRET_KEY'</span><span class="p">;</span>
@@ -347,6 +349,8 @@ Welcome to the Uviba - ImgEngine API! ImgEngine is one of the service of Uviba w
 <p>Make sure to replace Your_SECRET_KEY with your SECRET API key.</p>
 </blockquote>
 
+<p>If you want to use our upload button you can look at <a href="#upload-button">Upload Button</a>. Our upload button will help you to upload new images with rich functionality.</p>
+
 <p>To see How to manipulate images you can look at <a href="#usage-of-manipulation-params">Usage of manipulation params</a>.</p>
 <pre class="highlight php tab-php"><code>
 <span class="cp">&lt;?php</span>
@@ -355,14 +359,11 @@ Welcome to the Uviba - ImgEngine API! ImgEngine is one of the service of Uviba w
 </span><span class="k">echo</span> <span class="s1">'&lt;img src="'</span><span class="o">.</span><span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_url</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span>
 <span class="k">array</span><span class="p">(</span><span class="s1">'height'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">,</span><span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">,</span><span class="s1">'crop'</span><span class="o">=&gt;</span><span class="s1">'(123,123,123,12)'</span><span class="p">))</span><span class="o">.</span><span class="s1">'" /&gt;'</span><span class="p">;</span>
 </code></pre>
-<p>If you want to use our upload button you can look at <a href="#upload-button">Upload Button</a>.Our upload button will upload new images to our servers.
-<code>ImgEngine::get_image_url</code> this function can get your images doesn&#39;t matter where you upload them, it can be your own server, our service or it can be totally different server (with url).</p>
-
-<p>If you want to download your new images to our server with php code, you can use our <a href="#server-side-upload">Server Side Upload</a>.</p>
+<p>If you want to store new images in your server or in our service with php code, you can use our <a href="#server-side-upload">Server Side Upload</a>.</p>
 
 <aside class="warning">
 Your project should contain only one copy of our library, otherwise you will get <code> connect key is not valid error</code>
- Note if you have sub domain you should include our library instead of duplicate it. When you duplicate our library you can get <code>connect key</code>. If you got this error, you should include our library from one point, then you should clear inside of key.txt in our library which is located at Uviba_ImgEngine/storage/key.txt.
+ Note if you have sub domain you should include our library instead of duplicate it. When you duplicate our library you can get <code>connect key error</code>. If you got this error, you should include our library from one point, then you should clear inside of key.txt in our library which is located at Uviba_ImgEngine/storage/key.txt.
 </aside>
 <h1 id='configuration'>Configuration</h1>
 <blockquote>
@@ -1155,6 +1156,28 @@ https://api.uviba.com/imge/w_500,dpr_1/
 <p>We have created a javascript library for you which was automatically loaded when you call <code>ImgEngine::get_uploader_scripts();</code> function. You can use <code>uviba_OOS_uploader</code> class to control <code>Upload Button</code> behaviors and requests that it sent.</p>
 
 <p>When user chooses images or drag and drop them to <code>Upload Button</code>, user&#39;s browser will send those images to our servers. Then our servers will return response which contains file_name , mime_type, file_src and other useful information for you. You can check all response indexes in <a href="#upload-response">Upload Response</a> section.</p>
+<pre class="highlight php tab-php"><code><span class="nt">&lt;script&gt;</span>
+<span class="nx">uviba_OOS_uploader</span><span class="p">.</span><span class="nx">setUploadUrl</span><span class="p">(</span><span class="s1">'http://www.example.com/upload.php'</span><span class="p">);</span>
+
+<span class="nt">&lt;/script&gt;</span>
+
+</code></pre>
+<blockquote>
+<p>in upload.php use below code:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$upload_path</span><span class="o">=</span><span class="s2">"path_to/images/"</span><span class="p">;</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nx">Imgengine</span><span class="o">::</span><span class="na">download_auto</span><span class="p">(</span><span class="nv">$upload_path</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+
+</code></pre>
+<p><b>How to Upload Image to your own server</b></p>
+
+<p>You can use <code>uviba_OOS_uploader.setUploadUrl</code> function to upload files to custom url.
+It accepts 1 param which is upload url. For example, <code>uviba_OOS_uploader.setUploadUrl(http://example.com/upload.php)</code>. It will send files with <code>$_FILES[&#39;file&#39;]</code> variable.</p>
+
+<p>To try this, you can create <code>upload.php</code> file and pass its url to <code>uviba_OOS_uploader.setUploadUrl</code> function. Then you should use <code>Imgengine::download_auto($upload_path,$filename)</code> function to complete upload process, it will move file to <code>$upload_path</code> that you defined, and will return necessary params with array. You should use <code>echo json_encode($result_from_func);</code> to return response in upload.php file.</p>
 
 <blockquote>
 <p>To manipulate new uploaded image URL you can use this code:</p>
@@ -1386,7 +1409,7 @@ https://api.uviba.com/imge/w_500,dpr_1/
 <tr>
 <td>params</td>
 <td>array()</td>
-<td>you can pass the image name with array params.<code>array(&#39;filename&#39;=&gt;&#39;image_name&#39;)</code></td>
+<td>you can pass the image name with array params.<code>array(&#39;filename&#39;=&gt;&#39;image_name&#39;)</code>. If you don&#39;t pass filename, it will be generated automatically. <em>Note:</em> Never store filename that you passed, store filename that in the response of <code>Imgengine::upload</code> function because name that you passes can be duplicate, in that case our smart ai will add version to filename. E.g <code>yourfilename(1)</code>.</td>
 </tr>
 </tbody></table>
 
