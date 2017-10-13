@@ -313,6 +313,26 @@ public static function download($file,$new_path,$filename=''){
 
 }
 
+public static function download_auto($upload_path,$filename){
+		if(!isset($_POST['response_url_params'])){
+			$_POST['response_url_params']='';
+		}
+		$file_path = $_FILES['file']['tmp_name'];
+		$filename=self::download($file_path,$upload_path,$filename);
+		$data  = array();
+		$data['file_name']=$filename;
+		$data['file_src']=self::get_image_url($filename,$_POST['response_url_params']);
+		return $data;
+//eyni ile upload etdiyin kimi return etmeli
+//sonra bu function u setUploadUrl izahini yazarsan ve
+//onun getdiyi url e bunu qoyanda ishleyer
+//ya da en azinda file_url ve filename return etmeli
+//eger basqa seye ehtiyaci olsa ozu echo etmemis arraya qoyar
+
+//bununla da upload url deqiqlesir qalir qisalashdirmaq, video falan	
+
+}
+
 // Upload
 
 public static function upload($file_path,$params=array()){
