@@ -531,7 +531,7 @@ $(function(){
 
 
 
-$('head').prepend('<style>.uviba-oos-image-drop{display:none;border:2px dashed #4773dc;color:#5882ff;text-align:center;z-index:12;background:#f1f1f1;padding:14px;border-radius:2px;width:129px;margin: 10px auto;}.uviba-oos-image-uploader-button{text-align:center;padding:5px;border:1px solid #3086f5;background:#3086f5;color:#fff;width:123px;border-radius:2px;cursor:pointer;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;margin:10px auto;}.uviba-oos-image-uploader-button:active{box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.uviba-oos-image-uploader-button:hover{background:#5198f3;border-color:#5198f3}</style>');
+$('head').prepend('<style>.uviba-oos-image-drop{display:none;border:2px dashed #4773dc;color:#5882ff;text-align:center;z-index:12;background:#f1f1f1;padding:14px;border-radius:2px;width:129px;margin:10px 0;}.uviba-oos-image-uploader-button{text-align:center;padding:5px;border:1px solid #3086f5;background:#3086f5;color:#fff;width:123px;border-radius:2px;cursor:pointer;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;margin:10px 0;}.uviba-oos-image-uploader-button:active{box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.uviba-oos-image-uploader-button:hover{background:#5198f3;border-color:#5198f3}</style>');
 }
 
 if(!window.jQuery)
