@@ -275,9 +275,17 @@ $file_path='http://'.$_SERVER['HTTP_HOST'].'/'.$file_path;
 var mp_func_ar_public = '. json_encode(ImgEngine::$mp_func_ar_public).';
 var manipulate_param_error = '. json_encode(ImgEngine::$manipulate_param_error).';
 var uviba_UPLOAD_Url = \''.Uviba_UPLOAD_Url.'\';
+var uviba_Images_Url = \''.Uviba_Images_Url.'\';
 var uviba_API_CONNECT_KEY =\''.self::$instance->get_connect_key().'\';
 
-</script><script type="text/javascript"  >'. file_get_contents(self::$instance->ApiPath.'/public/js/uploader.js').'</script>';
+</script><script type="text/javascript"  >'. file_get_contents(self::$instance->ApiPath.'/public/js/uploader.js').'
+function uviba_oos_get_image(image_name,image_params){
+if(image_params===undefined){
+image_params="";
+}
+return uviba_Images_Url+"/"+image_params+"/"+image_name+"?connect_key="+uviba_API_CONNECT_KEY;
+}
+</script>';
 	}
 
 
@@ -363,7 +371,20 @@ $file_path=$tmpfname;
 	$tempFileFlag=true;
   	}
   	//echo$tmpfname;
-
+if($download_to_own!==false){
+	//it means, it is path from itself to itself or it is somehow $_FILES['filetoUpload']['tmpname'] 
+	if(!is_writable($file_path)){
+		ImgEngine::give_error(0,'upload folder is not writable');
+	}
+	$tmpfname = $params['own_path'];
+	$img = @file_get_contents($file_path);
+	if($img===false){
+		
+		ImgEngine::give_error();
+	}
+	$file_path=$tmpfname; 
+	$put_content_success = @file_put_contents($tmpfname.'/'.$filename, $img) or false;
+}
 
   	if($download_to_own===false){
   		//only will work if php version supports CurlFile!!!
@@ -389,7 +410,7 @@ $file_path=$tmpfname;
 				unlink($tmpfname);
 			}
 		}
-		//eger ozune yuklemirse
+		//upload to own server
 		//self::$instance->last_response=$result;
 		if(self::$instance->isJson($result)){
 					$data_ar = json_decode($result,true);
@@ -397,7 +418,7 @@ $file_path=$tmpfname;
 			return $data_ar;
 		}
   	}else{
-		//download edirse ozune yukleyirse
+		//if download activated
 		if($put_content_success!=false){
 			return true;
 		}
