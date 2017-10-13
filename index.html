@@ -306,7 +306,7 @@
           </li>
       </div>
         <ul class="toc-footer">
-            <li><a href='http://cloudengine.uviba.com/'>Sign Up for an API Key</a></li>
+            <li><a href='http://imgengine.uviba.com/'>Sign Up for an API Key</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -320,11 +320,11 @@ Welcome to the Uviba - ImgEngine API! ImgEngine is one of the service of Uviba w
 
 <p>You can view code examples in the dark area to the right.</p>
 
-<p>This API will help your website to improve performance and provides URL based image manipulation, so you can manipulate your images from URL. To see how our service works you can open <a href="http://cloudengine.uviba.com/quick_start" target="_blank" >this page</a>, it contains our <code>Upload Button</code> and some Manipulation params.</p>
+<p>This API will help your website to improve performance and provides URL based image manipulation, so you can manipulate your images from URL. To see how our service works you can open <a href="http://imgengine.uviba.com/quick_start" target="_blank" >this page</a>, it contains our <code>Upload Button</code> and some Manipulation params.</p>
 <h1 id='quick-start'>Quick Start</h1>
 <p>In this section you can see quick examples. In 5 minute you will be able to use our service easily. </p>
 <h2 id='setup'>Setup</h2>
-<p>Upload <a href="https://github.com/uviba/ImgEngineAPI/archive/master.zip" target="_blank" >library</a> and include autoload file. To learn how to do this you can see <a href="#configuration">Configuration section</a>.</p>
+<p>Download <a href="https://github.com/uviba/ImgEngineAPI/archive/master.zip" target="_blank" >library</a> and include autoload.php file inside of it to your project. To learn how to do this you can see <a href="#configuration">Configuration section</a>.</p>
 <pre class="highlight php tab-php"><code>
 <span class="cp">&lt;?php</span>
 <span class="k">require</span> <span class="s1">'path/to/Uviba_ImgEngine/autoload.php'</span><span class="p">;</span>
@@ -381,13 +381,15 @@ Your project should contain only one copy of our library, otherwise you will get
 <p>Make sure to replace <code>Path of Uviba_ImgEngine</code> with local path to Uviba_ImgEngine library.</p>
 </blockquote>
 
-<p>Install our API from <a href="https://github.com/uviba/ImgEngineAPI/archive/master.zip" target="_blank" >Github</a> , or visit our <a href="https://github.com/uviba/ImgEngineAPI/" target="_blank" >Github library</a> and just click <em>Clone or download</em> button and click <em>Download zip</em>. After extracting zip, copy folder which named as <em>Uviba_ImgEngine</em> into your project and use path of this folder to replace <code>Path of Uviba_ImgEngine</code>.The only purpose is just to include autoload.php file in <em>Uviba_ImgEngine</em> folder you just downloaded.</p>
+<p>Download our API from <a href="https://github.com/uviba/ImgEngineAPI/archive/master.zip" target="_blank" >Github</a> (or visit our <a href="https://github.com/uviba/ImgEngineAPI/" target="_blank" >Github library</a> and just click <em>Clone or download</em> button and click <em>Download zip</em> ). After extracting zip, open it and find folder which named as <em>Uviba_ImgEngine</em> and copy it into your project and use path of this folder to replace <code>Path of Uviba_ImgEngine</code> in codes section. </p>
+
+<p>The only purpose is just to include autoload.php file in <em>Uviba_ImgEngine</em> folder you just downloaded.</p>
 
 <aside class="notice">
-You must replace <code>Path of Uviba_ImgEngine</code> with server path of <i>Uviba_ImgEngine folder</i> which you just installed.
+You must replace <code>Path of Uviba_ImgEngine</code> in codes with server path of <i>Uviba_ImgEngine folder</i> which you just downloaded.
 </aside>
 <h1 id='authentication'>Authentication</h1>
-<p>ImgEngine uses API keys to allow access to our service. You can register a new ImgEngine API key at our <a href="http://cloudengine.uviba.com" target="_blank" >developer portal</a>. Just sign up, in the dashboard click <em>New Project</em> button, then choose best plan that fits you. Then back to dashboard, click <code>Pay</code> button (if payment failed you can use our redeem code from Payment section top of page) and click <code>More</code> button from the project that you want to get API key. Then scroll down and copy <code>SECRET KEY</code>.</p>
+<p>ImgEngine uses API keys to allow access to our service. You can register a new ImgEngine API key at our <a href="http://imgengine.uviba.com" target="_blank" >developer portal</a>. Just sign up, in the dashboard click <em>New Project</em> button, then choose best plan that fits you. Then back to dashboard, click <code>Pay</code> button (if payment failed you can use our redeem code from Payment section top of page) and click <code>More</code> button from the project that you want to get API key. Then scroll down and copy <code>SECRET KEY</code>.</p>
 
 <p>Use <code>ImgEngine::connect</code> function in order to connect with our API it take 4 parameters:<code>$secret_key, $hours, $secure,$params</code>.</p>
 
@@ -475,7 +477,7 @@ Our integration model is the best in the market. We support UI and server side i
 <p>To integrate your existing images, you just need to upload them to our service.
 To do this, we have 2 option: from <em>UI</em> and from <em>server side code</em>.</p>
 <h2 id='ui-integration-support'>UI Integration support</h2>
-<p>Login to <a href="http://cloudengine.uviba.com/dashboard" target="_blank" >Dashboard</a>. If you haven&#39;t already created a new project in dashboard click <em><code>[New Project]</code></em> and then choose the best plan that fits you. Click <em><code>[Pay]</code></em> button if you didn&#39;t. Then return back to the dashboard and click <em><code>[More]</code></em> button of project that you want to integrate your images with. Then Scroll down to section which is above of Keys section. You will see <em><code>[Your all images]</code></em> option and <em>Open folder</em> link in front of it. Click it to open the page which is our Cloud Storage console that called OOS(<em>Online Operation System</em>). Then it will automatically open a Virtual folder which contains all your images and is connected to your API KEY. Then choose all your existing images, drag and drop them to that virtual folder (in the browser), and you&#39;re done. Now you can manipulation you existing images, see <a href="#image-processing">Image processing</a> for more information.</p>
+<p>Login to <a href="http://imgengine.uviba.com/dashboard" target="_blank" >Dashboard</a>. If you haven&#39;t already created a new project in dashboard click <em><code>[New Project]</code></em> and then choose the best plan that fits you. Click <em><code>[Pay]</code></em> button if you didn&#39;t. Then return back to the dashboard and click <em><code>[More]</code></em> button of project that you want to integrate your images with. Then Scroll down to section which is above of Keys section. You will see <em><code>[Your all images]</code></em> option and <em>Open folder</em> link in front of it. Click it to open the page which is our Cloud Storage console that called OOS(<em>Online Operation System</em>). Then it will automatically open a Virtual folder which contains all your images and is connected to your API KEY. Then choose all your existing images, drag and drop them to that virtual folder (in the browser), and you&#39;re done. Now you can manipulation you existing images, see <a href="#image-processing">Image processing</a> for more information.</p>
 
 <aside class="notice">
 If your images are in your server, download them to your computer. Then open the folder you just downloaded which contains all your existing images ( if it is zip, extract it and then open the folder to see all images)
@@ -644,8 +646,9 @@ If your images are in your server, download them to your computer. Then open the
 <p>Rotates the image. Accepts <code>any integer</code> but only <code>auto, 0, 90, 180 or 270</code> these degrees can be use with <code>border</code> param. Default is auto. The auto option uses Exif data to automatically orient images correctly.</p>
 <pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 
-
-<span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'or_90'</span><span class="p">);</span>
+<span class="c1">//fm stands for format
+//or stands for orientation
+</span><span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'or_30,fm_png'</span><span class="p">);</span>
 
 <span class="c1">//or you can use array manipulation instead
 </span>
@@ -654,7 +657,7 @@ If your images are in your server, download them to your computer. Then open the
 <span class="p">));</span>
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;" src=" http://api.uviba.com/Resize_engine/w_500,h_500,or_90/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;" src=" https://api.uviba.com/imge/w_500,h_500,or_30,fm_png/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Fit</b> <code>fit_crop</code></p>
 
@@ -671,7 +674,7 @@ If your images are in your server, download them to your computer. Then open the
 <span class="p">));</span>
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;" src=" http://api.uviba.com/Resize_engine/w_500,h_500,fit_crop/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;" src=" https://api.uviba.com/imge/w_500,h_500,fit_crop/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Fit - Crop Position</b></p>
 
@@ -688,9 +691,9 @@ If your images are in your server, download them to your computer. Then open the
 <span class="s1">'fit'</span><span class="o">=&gt;</span><span class="s1">'crop-top-right'</span><span class="p">,</span>
 <span class="p">));</span>
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;" src=" http://api.uviba.com/Resize_engine/w_300,h_300,fit_crop-top-right/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;" src=" https://api.uviba.com/imge/w_300,h_300,fit_crop-top-right/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_300,h_300,fit_crop-left/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_300,h_300,fit_crop-left/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Fit - Crop Focal Point</b></p>
 
@@ -708,7 +711,7 @@ If your images are in your server, download them to your computer. Then open the
 <span class="p">));</span>
 
 </code></pre>
-<p><img  style="display:block;margin:0px auto;text-align:center;" src=" http://api.uviba.com/Resize_engine/w_500,h_500,fit_crop-25-25/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img  style="display:block;margin:0px auto;text-align:center;" src=" https://api.uviba.com/imge/w_500,h_500,fit_crop-25-25/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Crop <code>crop</code></b></p>
 
@@ -725,7 +728,7 @@ If your images are in your server, download them to your computer. Then open the
 
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/crop_(100,100,300,300)/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/crop_(100,100,300,300)/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Fit - other values</b>
 Sets how the image is fitted to its target dimensions.</p>
@@ -752,7 +755,7 @@ Sets how the image is fitted to its target dimensions.</p>
 <span class="p">));</span>
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_200,h_500,fit_stretch/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_200,h_500,fit_stretch/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Width and Height <code>w</code>,<code>h</code></b></p>
 
@@ -768,7 +771,7 @@ Sets how the image is fitted to its target dimensions.</p>
 <span class="p">));</span>
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_200,h_200/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_200,h_200/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Device pixel ratio <code>dpr</code></b></p>
 
@@ -784,7 +787,7 @@ Sets how the image is fitted to its target dimensions.</p>
 <span class="p">));</span>
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_300,dpr_2/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_300,dpr_2/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Brightness <code>bri</code></b></p>
 
@@ -800,7 +803,7 @@ Sets how the image is fitted to its target dimensions.</p>
 <span class="p">));</span>
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_500,bri_-25/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_500,bri_-25/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Contrast <code>con</code></b></p>
 
@@ -816,7 +819,7 @@ Sets how the image is fitted to its target dimensions.</p>
 <span class="p">));</span>
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_500,con_25/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_500,con_25/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Gamma <code>gam</code></b></p>
 
@@ -833,7 +836,7 @@ Sets how the image is fitted to its target dimensions.</p>
 
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_500,gam_1.5/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_500,gam_1.5/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Sharpen <code>sharp</code></b></p>
 
@@ -850,7 +853,7 @@ Sets how the image is fitted to its target dimensions.</p>
 
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_500,sharp_15/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_500,sharp_15/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Blur <code>blur</code></b></p>
 
@@ -867,7 +870,7 @@ Sets how the image is fitted to its target dimensions.</p>
 
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_500,blur_5/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_500,blur_5/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <aside class="notice">
 Performance can be intensive on larger amounts of blur.
@@ -888,7 +891,7 @@ Performance can be intensive on larger amounts of blur.
 
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_500,pixel_5/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_500,pixel_5/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Filter <code>filt</code></b></p>
 
@@ -905,7 +908,7 @@ Performance can be intensive on larger amounts of blur.
 
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_500,filt_sepia/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_500,filt_sepia/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Background <code>bg</code></b></p>
 
@@ -923,7 +926,7 @@ Performance can be intensive on larger amounts of blur.
 
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine//w_500,bg_black/159997928e8a747283882538370as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=25106f9ee0c6cbd763fb293096c94d75" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge//w_500,bg_black/159997928e8a747283882538370as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=25106f9ee0c6cbd763fb293096c94d75" ></p>
 <pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 
 <span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,bg_lime'</span><span class="p">);</span>
@@ -936,7 +939,7 @@ Performance can be intensive on larger amounts of blur.
 
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine//w_500,bg_lime/159997928e8a747283882538370as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=25106f9ee0c6cbd763fb293096c94d75" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge//w_500,bg_lime/159997928e8a747283882538370as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=25106f9ee0c6cbd763fb293096c94d75" ></p>
 
 <p><b>Border <code>border</code></b></p>
 
@@ -953,7 +956,7 @@ Performance can be intensive on larger amounts of blur.
 
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_500,border_(10,5000,overlay)/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_500,border_(10,5000,overlay)/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Method</b></p>
 
@@ -976,7 +979,7 @@ Performance can be intensive on larger amounts of blur.
 
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_500,border_(10,FFCC33,expand)/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_500,border_(10,FFCC33,expand)/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Quality <code>q</code></b></p>
 
@@ -993,7 +996,7 @@ Performance can be intensive on larger amounts of blur.
 
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_500,q_6/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_500,q_6/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 
 <p><b>Format <code>fm</code></b></p>
 
@@ -1010,7 +1013,7 @@ Performance can be intensive on larger amounts of blur.
 
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;"  src=" http://api.uviba.com/Resize_engine/w_500,fm_png/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;"  src=" https://api.uviba.com/imge/w_500,fm_png/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577&secure_token=cbfe9e23c3f36d95578cac42eb2b1db3" ></p>
 <h2 id='responsive-images'>Responsive Images</h2>
 <p>You can use <code>dpr</code>param to get responsive images for each device by using <code>srcset attribute of img tag</code>.</p>
 <pre class="highlight php tab-php"><code>
@@ -1022,21 +1025,21 @@ Performance can be intensive on larger amounts of blur.
 lets use dpr <span class="nt">&lt;br/&gt;</span>
 
 <span class="nt">&lt;img</span>
-  <span class="na">srcset=</span><span class="s">"http://api.uviba.com/Resize_engine/w_500,dpr_1/
+  <span class="na">srcset=</span><span class="s">"https://api.uviba.com/imge/w_500,dpr_1/
 159988fb0bde60750108082802as123138.jpg?
 &amp;connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 1x,
-http://api.uviba.com/Resize_engine/w_500
+https://api.uviba.com/imge/w_500
 ,dpr_1/159988fb0bde60750108082802as123138.jpg
 ?&amp;connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 2x,
-http://api.uviba.com/Resize_engine/w_500,dpr_1/
+https://api.uviba.com/imge/w_500,dpr_1/
 159988fb0bde60750108082802as123138.jpg?&amp;connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 3x"</span>
-  <span class="na">src=</span><span class="s">"http://api.uviba.com/Resize_engine/w_500/
+  <span class="na">src=</span><span class="s">"https://api.uviba.com/imge/w_500/
 
 159988fb0bde60750108082802as123138.jpg?&amp;connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577"</span>
 <span class="nt">&gt;</span>
 
 </code></pre>
-<p><img style="display:block;margin:0px auto;text-align:center;" srcset="http://api.uviba.com/Resize_engine/w_500,dpr_3/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 1x, http://api.uviba.com/Resize_engine/w_500,dpr_2/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 2x, http://api.uviba.com/Resize_engine/w_500,dpr_3/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 3x" src=" http://api.uviba.com/Resize_engine/w_500,fm_png/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577" ></p>
+<p><img style="display:block;margin:0px auto;text-align:center;" srcset="https://api.uviba.com/imge/w_500,dpr_3/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 1x, https://api.uviba.com/imge/w_500,dpr_2/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 2x, https://api.uviba.com/imge/w_500,dpr_3/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 3x" src=" https://api.uviba.com/imge/w_500,fm_png/159988fb0bde60750108082802as123138.jpg?&connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577" ></p>
 <h1 id='upload'>Upload</h1>
 <p>There are 2 ways to upload images to our service: UI and Server side code.</p>
 <h2 id='upload-button'>Upload Button</h2>
@@ -1073,9 +1076,9 @@ http://api.uviba.com/Resize_engine/w_500,dpr_1/
 <span class="na">uviba-uploader-id=</span><span class="s">"myUploadId"</span>
 <span class="na">class=</span><span class="s">"uviba-oos-image-uploader"</span>
 <span class="na">type=</span><span class="s">"file"</span> <span class="na">name=</span><span class="s">"file"</span> <span class="na">accept=</span><span class="s">"image/*"</span> 
-<span class="na">multiple=</span><span class="s">"true"</span>
+<span class="na">multiple=</span><span class="s">"true"</span> <span class="na">buttonText=</span><span class="s">"Upload Photos"</span>
 <span class="na">buttonStyle=</span><span class="s">""</span> <span class="na">buttonAttr=</span><span class="s">""</span> <span class="na">buttonClass=</span><span class="s">""</span> <span class="na">dragAreaStyle=</span><span class="s">""</span>
-<span class="na">DragAreaAttr=</span><span class="s">""</span> <span class="na">dragAreaClass=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+<span class="na">DragAreaAttr=</span><span class="s">""</span> <span class="na">dragAreaClass=</span><span class="s">""</span>  <span class="nt">/&gt;</span>
 
 <span class="nt">&lt;/div&gt;</span>
 <span class="cp">&lt;?php</span>
@@ -1101,6 +1104,11 @@ http://api.uviba.com/Resize_engine/w_500,dpr_1/
 <td>uviba-uploader-id</td>
 <td>unique string for each button</td>
 <td>if you have multiple upload buttons, it will help you and our library identify buttons. For example, <code>uviba_OOS_uploader.get_uploaded_file_names(&#39;string that you have passed to uviba-uploader-id&#39;);</code>, this function will return current uploaded file names related with the id that passes to its paramater.</td>
+</tr>
+<tr>
+<td>buttonText</td>
+<td>string</td>
+<td>text of upload button. Default is <code>Choose Photos</code>.</td>
 </tr>
 <tr>
 <td>multiple</td>
