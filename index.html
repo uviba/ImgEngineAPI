@@ -1287,6 +1287,50 @@ https://api.uviba.com/imge/w_500,dpr_1/
 
 <p>If you want to customize uploading process, but also want to use default behaviors, you should call default functions and pass arguments(params) to them.</p>
 <h2 id='server-side-upload'>Server Side Upload</h2>
+<p>First you should finish <a href="#configuration">Configuration section</a> and <a href="#authentication">Authentication section</a> then create a new file (can be named like upload.php) and include config and auth codes to continue.</p>
+
+<p>There are 2 ways to store images: in your server (<code>Imgengine::download</code>) (<em>Recommended if you use <a href="#web-folders">Web Folders</a></em>), in our service (<code>Imgengine::upload</code>)</p>
+<h3 id='how-to-store-images-in-your-own-server'>How to store images in your own server</h3>
+<blockquote>
+<p>To download an image use this code:</p>
+</blockquote>
+<pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$file</span> <span class="o">=</span> <span class="s1">'Local path, URL or data Uri of Image'</span><span class="p">;</span>
+<span class="c1">//filename should contains extension!!
+</span><span class="nv">$filename</span> <span class="o">=</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">download</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span><span class="s1">'/path_to/images/'</span><span class="p">);</span>
+<span class="c1">//filename is not false it means download was successful
+</span></code></pre>
+<p>You can use <code>Imgengine::download</code> function from our API library to download new images to your server,so it will be stored in your own server (<em>Recommended if you are using <a href="#web-folders">Web Folders</a></em>).</p>
+
+<p><code>Imgengine::download</code> takes 3 params: <code>String file</code>, <code>String upload_path</code>, <code>String newFilename</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>file</td>
+<td>required</td>
+<td>You should pass path, URL or data uri of image.E.g. this parameter can be one of these:<code>/home/cat.jpg</code>, <code>http://www.example.com/image.jpg</code>, <code>data:image/jpg;base64,RASDHKLSJDHKLASHDKLJASHDSexample</code>. Also you can pass <code>$_FILES[&#39;fileToUpload&#39;][&#39;tmp_name&#39;]</code> as a file path.</td>
+</tr>
+<tr>
+<td>upload_path</td>
+<td>required</td>
+<td>In which path images will be stored. E.g <code>/path_to/images/</code></td>
+</tr>
+<tr>
+<td>newFilename</td>
+<td>unique name</td>
+<td>If you don&#39;t pass this param, it will be generated automatically. This is a name for downloaded image.</td>
+</tr>
+</tbody></table>
+
+<p><code>Imgengine::download</code> will return filename if it is not false it means download was successful.</p>
+<h3 id='how-to-upload-images-to-our-service'>How to upload images to our service</h3>
 <blockquote>
 <p>To upload an image use this code:</p>
 </blockquote>
@@ -1324,9 +1368,8 @@ https://api.uviba.com/imge/w_500,dpr_1/
 <span class="p">}</span>
 
 </code></pre>
-<p>First you should finish <a href="#configuration">Configuration section</a> and <a href="#authentication">Authentication section</a> and include them to continue.
-You can use Upload function from our API library. E.g. you can set server side upload script in the file which accepts uploaded images from your users in your server.
-It takes 2 params: <code>String file</code>, <code>array params</code></p>
+<p>You can use <code>Imgengine::upload</code> function from our API library to upload new images to your imgengine, it will be stored in our service.
+<code>Imgengine::upload</code> takes 2 params: <code>String file</code>, <code>array params</code></p>
 
 <table><thead>
 <tr>
@@ -1347,9 +1390,9 @@ It takes 2 params: <code>String file</code>, <code>array params</code></p>
 </tr>
 </tbody></table>
 
-<p>You can use this code to upload images from your users and also integrate your existing images with our service.</p>
+<p>You can use this code to upload images from your users and also integrate your existing images with our service. (If you use <a href="#web-folders">Web Folders</a>, you don&#39;t need to do it)</p>
 
-<p>If response equals to <code>false</code>, it means upload process is failed, otherwise upload process was successful.You learn more information in <a href="#upload-response">Upload Response section</a>.</p>
+<p>If response equals to <code>false</code>, it means upload process is failed, otherwise upload process was successful. You can learn more information in <a href="#upload-response">Upload Response section</a>.</p>
 <h2 id='upload-response'>Upload Response</h2>
 <p><code>filename</code> is <code>image_name</code>, so you can save it in database after you get response.</p>
 <h3 id='success-response'>Success Response</h3>
