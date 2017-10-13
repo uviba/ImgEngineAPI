@@ -1,4 +1,3 @@
-
  function uviba_OOS_uploader(){
  	
 
@@ -246,7 +245,9 @@ this.upload_file_count_limit=false;
     }
     return s;
 }
-
+	this.setUploadUrl = function(url){
+		uviba_UPLOAD_Url=url;
+	}
  	this.getbyclass = function(classname){
  		return document.getElementsByClassName(classname);
  	}
@@ -543,9 +544,5 @@ if(!window.jQuery)
 }else{
 	uviba_uploader_callback();
 }
-
-
-
-
 
 
