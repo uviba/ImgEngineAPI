@@ -278,7 +278,7 @@ var uviba_UPLOAD_Url = \''.Uviba_UPLOAD_Url.'\';
 var uviba_Images_Url = \''.Uviba_Images_Url.'\';
 var uviba_API_CONNECT_KEY =\''.self::$instance->get_connect_key().'\';
 
-</script><script type="text/javascript"  >'. file_get_contents(self::$instance->ApiPath.'/public/js/uploader.js').'
+</script><script type="text/javascript"  >'. file_get_contents(self::$instance->ApiPath.'/public/js/uploader_min.js').'
 function uviba_oos_get_image(image_name,image_params){
 if(image_params===undefined){
 image_params="";
