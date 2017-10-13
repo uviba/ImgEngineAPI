@@ -302,7 +302,7 @@ public static function is_auth(){
 public static function download($file,$new_path,$filename=''){
 		
 		if(trim($filename)==''){
-			$filename=uniqid().time().'.jpg';
+			$filename=uniqid(true).rand().uniqid(true).rand(9,9999).rand().rand(1,999999).time().'.jpg';
 		}
 	$res = self::upload($file,array('filename'=>$filename,'download_to_own'=>true,'own_path'=>$new_path));
 	if($res!=false){
@@ -372,7 +372,7 @@ $file_path=$tmpfname;
   	}
   	//echo$tmpfname;
 if($download_to_own!==false){
-	//it means, it is path from itself to itself or it is somehow $_FILES['filetoUpload']['tmpname'] 
+	//demeli pathdi ozunden ozune ya da $_FILES['filetoUpload']['tmpname'] di
 	if(!is_writable($file_path)){
 		ImgEngine::give_error(0,'upload folder is not writable');
 	}
@@ -410,7 +410,7 @@ if($download_to_own!==false){
 				unlink($tmpfname);
 			}
 		}
-		//upload to own server
+		//eger ozune yuklemirse
 		//self::$instance->last_response=$result;
 		if(self::$instance->isJson($result)){
 					$data_ar = json_decode($result,true);
@@ -418,7 +418,7 @@ if($download_to_own!==false){
 			return $data_ar;
 		}
   	}else{
-		//if download activated
+		//download edirse ozune yukleyirse
 		if($put_content_success!=false){
 			return true;
 		}
