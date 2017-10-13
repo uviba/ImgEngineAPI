@@ -333,7 +333,7 @@ var element  = this.getbyclass('uviba-oos-image-uploader');
 					othis.button_word=buttonText;
 				}
 				
-				$(this).after('<div '+buttonAttr+' style="display:inline-block;'+buttonStyle+'" class=" '+buttonClass+' uviba-oos-image-uploader-button" >\
+				$(this).after('<div '+buttonAttr+' style="'+buttonStyle+'" class=" '+buttonClass+' uviba-oos-image-uploader-button" >\
 				'+othis.button_word+'\
 			</div>').after('<div style="'+dragAreaStyle+'" '+dragAreaAttr+'  class=" '+dragAreaClass+' uviba-oos-image-drop  " >'+othis.before_drag_word+' </div>');
 				othis.uploaded_file_names[uviba_uploader_id]=[];
