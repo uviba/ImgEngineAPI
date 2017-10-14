@@ -1026,17 +1026,10 @@ Performance can be intensive on larger amounts of blur.
 lets use dpr <span class="nt">&lt;br/&gt;</span>
 
 <span class="nt">&lt;img</span>
-  <span class="na">srcset=</span><span class="s">"https://api.uviba.com/imge/w_500,dpr_1/
-159988fb0bde60750108082802as123138.jpg?
-&amp;connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 1x,
-https://api.uviba.com/imge/w_500
-,dpr_1/159988fb0bde60750108082802as123138.jpg
-?&amp;connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 2x,
-https://api.uviba.com/imge/w_500,dpr_1/
-159988fb0bde60750108082802as123138.jpg?&amp;connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577 3x"</span>
-  <span class="na">src=</span><span class="s">"https://api.uviba.com/imge/w_500/
-
-159988fb0bde60750108082802as123138.jpg?&amp;connect_key=tmp619ap_k725999b80a7d7abce2c41c884f90b1723859eeab3db5577"</span>
+  <span class="na">srcset=</span><span class="s">"<?php echo ImgEngine::get_image_tag($image_name,'w_500,dpr_1'); ?> 1x,
+<?php echo ImgEngine::get_image_tag($image_name,'w_500,dpr_2'); ?> 2x,
+<?php echo ImgEngine::get_image_tag($image_name,'w_500,dpr_3'); ?> 3x"</span>
+  <span class="na">src=</span><span class="s">"<?php echo ImgEngine::get_image_tag($image_name,'w_500'); ?>"</span>
 <span class="nt">&gt;</span>
 
 </code></pre>
