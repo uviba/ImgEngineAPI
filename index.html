@@ -1026,10 +1026,10 @@ Performance can be intensive on larger amounts of blur.
 lets use dpr <span class="nt">&lt;br/&gt;</span>
 
 <span class="nt">&lt;img</span>
-  <span class="na">srcset=</span><span class="s">"<span class="cp">&lt;?php</span> echo ImgEngine::get_image_tag($image_name,'w_500,dpr_1'); <span class="cp">?&lt;</span> 1x,
-<span class="cp">&lt;?php</span> echo ImgEngine::get_image_tag($image_name,'w_500,dpr_2'); <span class="cp">?&lt;</span> 2x,
-<span class="cp">&lt;?php</span> echo ImgEngine::get_image_tag($image_name,'w_500,dpr_3'); <span class="cp">?&lt;</span> 3x"</span>
-  <span class="na">src=</span><span class="s">"<span class="cp">&lt;?php</span> echo ImgEngine::get_image_tag($image_name,'w_500'); <span class="cp">?&lt;</span>"</span>
+  <span class="na">srcset=</span><span class="s">"<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,dpr_1'</span><span class="p">);</span> <span class="cp">?&gt;</span> 1x,
+<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,dpr_2'</span><span class="p">);</span> <span class="cp">?&gt;</span> 2x,
+<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,dpr_3'</span><span class="p">);</span> <span class="cp">?&gt;</span> 3x"</span>
+  <span class="na">src=</span><span class="s">"<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500'</span><span class="p">);</span> <span class="cp">?&gt;</span>"</span>
 <span class="nt">&gt;</span>
 
 </code></pre>
