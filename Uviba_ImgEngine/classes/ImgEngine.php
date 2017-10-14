@@ -313,7 +313,7 @@ public static function download($file,$new_path,$filename=''){
 
 }
 
-public static function download_auto($upload_path,$filename){
+public static function download_auto($upload_path,$filename=""){
 		if(!isset($_POST['response_url_params'])){
 			$_POST['response_url_params']='';
 		}
