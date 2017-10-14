@@ -1026,10 +1026,10 @@ Performance can be intensive on larger amounts of blur.
 lets use dpr <span class="nt">&lt;br/&gt;</span>
 
 <span class="nt">&lt;img</span>
-  <span class="na">srcset=</span><span class="s">"<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_url</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,dpr_1'</span><span class="p">);</span> <span class="cp">?&gt;</span> 1x,
-<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_url</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,dpr_2'</span><span class="p">);</span> <span class="cp">?&gt;</span> 2x,
-<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_url</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,dpr_3'</span><span class="p">);</span> <span class="cp">?&gt;</span> 3x"</span>
-  <span class="na">src=</span><span class="s">"<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_url</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500'</span><span class="p">);</span> <span class="cp">?&gt;</span>"</span>
+  <span class="na">srcset=</span><span class="s">"</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,dpr_1'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s"> 1x,
+</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,dpr_2'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s"> 2x,
+</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500,dpr_3'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s"> 3x"</span>
+  <span class="na">src=</span><span class="s">"</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_tag</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span><span class="s1">'w_500'</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">"</span>
 <span class="nt">&gt;</span>
 
 </code></pre>
@@ -1218,20 +1218,20 @@ It accepts 1 param which is upload url. For example, <code>uviba_OOS_uploader.se
 <span class="c1">//will be called after user selects image that he or she wants to upload</span>
 <span class="nx">uviba_OOS_uploader</span><span class="p">.</span><span class="nx">when_select</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">upload_count</span><span class="p">){</span>
     <span class="c1">//inside is just example you can customize it</span>
-<span class="nx">when_select_default</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">upload_count</span><span class="p">);</span>
+<span class="nx">uviba_OOS_uploader</span><span class="p">.</span><span class="nx">when_select_default</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">upload_count</span><span class="p">);</span>
 <span class="c1">//your custom codes</span>
 <span class="p">});</span>
 
 <span class="c1">//will be called before each upload process begin for each image</span>
 <span class="nx">uviba_OOS_uploader</span><span class="p">.</span><span class="nx">when_upload_begin</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">,</span><span class="nx">upload_count</span><span class="p">){</span>
-    <span class="nx">when_upload_begin_default</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">,</span><span class="nx">upload_count</span><span class="p">);</span>
+    <span class="nx">uviba_OOS_uploader</span><span class="p">.</span><span class="nx">when_upload_begin_default</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">,</span><span class="nx">upload_count</span><span class="p">);</span>
 <span class="c1">//your custom codes</span>
 <span class="p">});</span>
 
 <span class="c1">//will be called each time upload progress is finished </span>
 <span class="c1">//so you can show how many percent of image uploaded</span>
 <span class="nx">uviba_OOS_uploader</span><span class="p">.</span><span class="nx">when_upload_progress</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span><span class="nx">percentComplete</span><span class="p">,</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">){</span>
-    <span class="nx">when_upload_progress_deault</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span><span class="nx">percentComplete</span><span class="p">,</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">);</span>
+    <span class="nx">uviba_OOS_uploader</span><span class="p">.</span><span class="nx">when_upload_progress_deault</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span><span class="nx">percentComplete</span><span class="p">,</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">);</span>
 <span class="c1">//your custom codes</span>
 <span class="p">});</span>
 
@@ -1243,7 +1243,7 @@ It accepts 1 param which is upload url. For example, <code>uviba_OOS_uploader.se
     <span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="nx">when_upload_finish_default</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">);</span>
+<span class="nx">uviba_OOS_uploader</span><span class="p">.</span><span class="nx">when_upload_finish_default</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">);</span>
 <span class="c1">//your custom codes</span>
 
 <span class="p">});</span>
@@ -1252,7 +1252,7 @@ It accepts 1 param which is upload url. For example, <code>uviba_OOS_uploader.se
 <span class="c1">//will fire when upload is failed</span>
 <span class="nx">uviba_OOS_uploader</span><span class="p">.</span><span class="nx">when_upload_fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">){</span>
     <span class="c1">//when upload response code is not 200</span>
-<span class="nx">when_upload_fail_default</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">);</span>
+<span class="nx">uviba_OOS_uploader</span><span class="p">.</span><span class="nx">when_upload_fail_default</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="nx">index</span><span class="p">);</span>
 <span class="c1">//your custom codes</span>
 
 <span class="p">});</span>
