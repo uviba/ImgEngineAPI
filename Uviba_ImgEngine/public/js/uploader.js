@@ -328,8 +328,8 @@ var element  = this.getbyclass('uviba-oos-image-uploader');
 				if (typeof dragAreaClass === typeof undefined || dragAreaClass === false) {
 					dragAreaClass='';
 				}
-				var buttonText = element.attr('buttonText');;
-				if (typeof dragAreaClass === typeof undefined || dragAreaClass === false) {
+				var buttonText = element.attr('buttonText');;alert(buttonText);
+				if (typeof buttonText !== typeof undefined) {
 					othis.button_word=buttonText;
 				}
 				
