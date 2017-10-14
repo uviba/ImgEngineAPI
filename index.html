@@ -323,6 +323,24 @@ Welcome to the Uviba - ImgEngine API! ImgEngine is one of the service of Uviba w
 <p>This API will help your website to improve performance and provides URL based image manipulation, so you can manipulate your images from URL. To see how our service works you can open <a href="http://imgengine.uviba.com/quick_start" target="_blank" >this page</a>, it contains our <code>Upload Button</code> and some Manipulation params.</p>
 <h1 id='quick-start'>Quick Start</h1>
 <p>In this section you can see quick examples. In 5 minute you will be able to use our service easily. </p>
+
+<p>You can watch our video tutorials to implement documentation more easily :</p>
+
+<p>1) <a href="#configuration">Configuration section</a> =&gt; <a href="https://www.youtube.com/watch?v=uKWqM1DiXL4" target="_blank" >Open Video in Youtube</a></p>
+
+<p>2) <a href="#authentication">Authentication section</a> =&gt; <a href="https://www.youtube.com/watch?v=_BJkk2XurF8" target="_blank" >Open Video in Youtube</a> </p>
+
+<p>3) <a href="#web-folders">Web Folders</a> =&gt; <a href="https://www.youtube.com/watch?v=fL-ag4wC2Yw" target="_blank" >Open Video in Youtube</a> </p>
+
+<p>4) <a href="#image-processing">Image Processing</a> =&gt; <a href="https://www.youtube.com/watch?v=Ru-9mC8Azvg" target="_blank" >Open Video in Youtube</a> </p>
+
+<p>5) <a href="#integration">Integration</a> =&gt; <a href="https://www.youtube.com/watch?v=kjWAg-OizAs" target="_blank" >Open Video in Youtube</a> </p>
+
+<p>6) <a href="#upload-button">Upload Button</a> =&gt; <a href="https://www.youtube.com/watch?v=MJw3-bQcI7o" target="_blank" >Watch Tutorial on Youtube</a> </p>
+
+<p>7) <a href="#server-side-upload">Server Side Upload</a> =&gt; <a href="https://www.youtube.com/watch?v=E7XYc5SuobI" target="_blank" >Open Video in Youtube</a> </p>
+
+<p>8) Explanation for all ImgEngine Api =&gt; <a href="https://youtu.be/bR2PapA9IEQ" target="_blank" >Open Video in Youtube</a> </p>
 <h2 id='setup'>Setup</h2>
 <p>Download <a href="https://github.com/uviba/ImgEngineAPI/archive/master.zip" target="_blank" >library</a> and use <code>php</code> to include autoload.php file (in the library) to your project. To learn how to do this you can see <a href="#configuration">Configuration section</a>.</p>
 <pre class="highlight php tab-php"><code>
@@ -331,7 +349,7 @@ Welcome to the Uviba - ImgEngine API! ImgEngine is one of the service of Uviba w
 </code></pre>
 <p>Auth with your secret key. Follow steps in begining of <a href="#authentication">Authentication section</a>;</p>
 
-<p>You can use <a href="#web-folders">Web Folders</a> which you just define url of your existing images and you will be able to manipulate them automatically without needed to upload them to our service.</p>
+<p>You can use <a href="#web-folders">Web Folders</a> which you just define url of your existing images and you will be able to manipulate them automatically without needed to upload them to our service. If you don&#39;t want to use Web Folders, you can look at <a href="#integration">Integration section</a>.</p>
 <pre class="highlight php tab-php"><code>
 <span class="cp">&lt;?php</span>
 <span class="nv">$secret_key</span><span class="o">=</span><span class="s1">'Your_SECRET_KEY'</span><span class="p">;</span>
@@ -349,8 +367,6 @@ Welcome to the Uviba - ImgEngine API! ImgEngine is one of the service of Uviba w
 <p>Make sure to replace Your_SECRET_KEY with your SECRET API key.</p>
 </blockquote>
 
-<p>If you want to use our upload button you can look at <a href="#upload-button">Upload Button</a>. Our upload button will help you to upload new images with rich functionality.</p>
-
 <p>To see How to manipulate images you can look at <a href="#usage-of-manipulation-params">Usage of manipulation params</a>.</p>
 <pre class="highlight php tab-php"><code>
 <span class="cp">&lt;?php</span>
@@ -359,6 +375,8 @@ Welcome to the Uviba - ImgEngine API! ImgEngine is one of the service of Uviba w
 </span><span class="k">echo</span> <span class="s1">'&lt;img src="'</span><span class="o">.</span><span class="nx">ImgEngine</span><span class="o">::</span><span class="na">get_image_url</span><span class="p">(</span><span class="nv">$image_name</span><span class="p">,</span>
 <span class="k">array</span><span class="p">(</span><span class="s1">'height'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">,</span><span class="s1">'width'</span><span class="o">=&gt;</span><span class="mi">200</span><span class="p">,</span><span class="s1">'crop'</span><span class="o">=&gt;</span><span class="s1">'(123,123,123,12)'</span><span class="p">))</span><span class="o">.</span><span class="s1">'" /&gt;'</span><span class="p">;</span>
 </code></pre>
+<p>If you want to use our upload button you can look at <a href="#upload-button">Upload Button</a>. Our upload button will help you to upload new images with rich functionality.</p>
+
 <p>If you want to store new images in your server or in our service with php code, you can use our <a href="#server-side-upload">Server Side Upload</a>.</p>
 
 <aside class="warning">
@@ -366,6 +384,8 @@ Your project should contain only one copy of our library, otherwise you will get
  Note if you have sub domain you should include our library instead of duplicate it. When you duplicate our library you can get <code>connect key error</code>. If you got this error, you should include our library from one point, then you should clear inside of key.txt in our library which is located at Uviba_ImgEngine/storage/key.txt.
 </aside>
 <h1 id='configuration'>Configuration</h1>
+<p>(<a href="https://www.youtube.com/watch?v=uKWqM1DiXL4" target="_blank" >Watch Tutorial on Youtube</a>)</p>
+
 <blockquote>
 <p>Use following code after installation of our library to include autoload file</p>
 </blockquote>
@@ -390,6 +410,8 @@ Your project should contain only one copy of our library, otherwise you will get
 You must replace <code>Path of Uviba_ImgEngine</code> in codes with server path of <i>Uviba_ImgEngine folder</i> which you just downloaded.
 </aside>
 <h1 id='authentication'>Authentication</h1>
+<p>(<a href="https://www.youtube.com/watch?v=_BJkk2XurF8" target="_blank" >Watch Tutorial on Youtube</a>)</p>
+
 <p>ImgEngine uses API keys to allow access to our service. You can register a new ImgEngine API key at our <a href="http://imgengine.uviba.com" target="_blank" >developer portal</a>. Just sign up, in the dashboard click <em>New Project</em> button, then choose best plan that fits you. Then back to dashboard, click <code>Pay</code> button (if payment failed you can use our redeem code from Payment section top of page) and click <code>More</code> button from the project that you want to get API key. Then scroll down and copy <code>SECRET KEY</code>.</p>
 
 <p>Use <code>ImgEngine::connect</code> function in order to connect with our API it take 4 parameters:<code>$secret_key, $hours, $secure,$params</code>.</p>
@@ -445,6 +467,8 @@ You must replace <code>Path of Uviba_ImgEngine</code> in codes with server path 
 You must replace <code>Your_SECRET_KEY</code> with your Secret API Key.
 </aside>
 <h1 id='web-folders'>Web Folders</h1>
+<p>(<a href="https://www.youtube.com/watch?v=fL-ag4wC2Yw" target="_blank" >Watch Tutorial on Youtube</a>)</p>
+
 <p><code>Web Folders</code> help you to use your existing images with our service without uploading them to our servers (To learn more details about integration and uploading process for your existing images see <a href="#integration">Integration section</a>). If you set <code>web_folder_url</code> index to link of your server folder which contains all your existing images, you won&#39;t need to upload them to our server, because via that link you provided, we will find them . You will pass image name then we will combine <code>$image_name</code> with <code>web_folder_url</code> and we will get full URL of image itself, so we will be able to manipulate your existing images.</p>
 <h2 id='how-to-use-web-folders'>How to use Web folders</h2>
 <blockquote>
@@ -470,6 +494,8 @@ You must replace <code>Your_SECRET_KEY</code> with your Secret API Key.
 
 <p>When you pass <code>web_folder_url</code> option, you don&#39;t need to upload your existing images to our service. However, when you use our <code>Upload Button</code> (See <a href="#upload-button">Upload Button section</a>), new images that user uploaded will be saved in our server. If you don&#39;t want your images to be stored in our secure servers, you can use your own upload method to upload new images to your own server. After you provide <code>web_folder_url</code> index in array, you can manipulate images in that URL. When you <a href="#image-processing">manipulate image</a>, <code>$image_name</code> will be same with <code>web_folder_url/image_name</code> URL.</p>
 <h1 id='integration'>Integration</h1>
+<p>(<a href="https://www.youtube.com/watch?v=kjWAg-OizAs" target="_blank" >Watch Tutorial on Youtube</a> )</p>
+
 <p>To use our service with your existing images, you can integrate them or you can use <code>Web Folders</code>  (See <a href="#web-folders">Web Folders</a>).
 <aside class="success">
 Our integration model is the best in the market. We support UI and server side integration and you don&#39;t need to change anything in your database. Even people who are not a developer can integrate their websites&#39; images with our service.
@@ -488,6 +514,8 @@ If your images are in your server, download them to your computer. Then open the
 
 <p>To do this you can create an integration file (e.g. <code>integ.php</code>) in your server, it will run just once and then you can delete it. In that file, select paths and names(filenames) of all your existing images. After that, for each image run upload code in some loop. To see how you can upload images with server side code you can select <em><a href="#server-side-upload">Server Side Upload subsection of Upload section</a></em> .</p>
 <h1 id='image-processing'>Image Processing</h1>
+<p>(<a href="https://www.youtube.com/watch?v=Ru-9mC8Azvg" target="_blank" >Watch Tutorial on Youtube</a> )</p>
+
 <p>You can manipulate images from URL if you set <code>secure</code> param to false in <code>ImgEngine::connect</code> function (see <a href="#authentication">Authentication</a> ) otherwise, it will return <code>secure_token is not true</code> error response. However, when you <code>secure</code> to true, our API will encrypt URL of the image with params that you have passed and will generate secure sign (<code>secure_token</code>) which will be unique for each image name and manipulation params. If someone tries to change url to manipulate image, it will return error for them because <code>secure_token</code> will not be true for new combination of <code>image_name</code> and <code>manipulation params</code>.</p>
 <h2 id='manipulation-params'>Manipulation params</h2>
 <p>You can use each function in <code>ImgEngine::get_image_url</code> (and similar function that you can see in code section) in php. This function will return URL which will manipulate image according to params that you have passed.This function accepts <code>image_name</code> and <code>manipulation_array or string</code>.
@@ -1037,6 +1065,8 @@ lets use dpr <span class="nt">&lt;br/&gt;</span>
 <h1 id='upload'>Upload</h1>
 <p>There are 2 ways to upload images to our service: UI and Server side code.</p>
 <h2 id='upload-button'>Upload Button</h2>
+<p>(<a href="https://www.youtube.com/watch?v=MJw3-bQcI7o" target="_blank" >Watch Tutorial on Youtube</a>)</p>
+
 <p>We are providing <code>Upload Button</code> with rich functionalities which support drag and drop upload (link, image tag, image from user&#39;s operation system) and uploading multiple files.</p>
 
 <p>You can create our upload button with php or html.</p>
@@ -1303,6 +1333,8 @@ It accepts 1 param which is upload url. For example, <code>uviba_OOS_uploader.se
 
 <p>If you want to customize uploading process, but also want to use default behaviors, you should call default functions and pass arguments(params) to them.</p>
 <h2 id='server-side-upload'>Server Side Upload</h2>
+<p>(<a href="https://www.youtube.com/watch?v=E7XYc5SuobI" target="_blank" >Watch Tutorial on Youtube</a> )</p>
+
 <p>First you should finish <a href="#configuration">Configuration section</a> and <a href="#authentication">Authentication section</a> then create a new file (can be named like upload.php) and include config and auth codes to continue.</p>
 
 <p>There are 2 ways to store images: in your server (<code>Imgengine::download</code>) (<em>Recommended if you use <a href="#web-folders">Web Folders</a></em>), in our service (<code>Imgengine::upload</code>)</p>
