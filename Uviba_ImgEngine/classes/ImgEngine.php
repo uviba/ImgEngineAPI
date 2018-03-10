@@ -493,7 +493,7 @@ public static function create_upload_button($attr=array()){
 		}else if($key=='accept'){
 			$accept=$value;
 		}else{
-			$upload_button.=' '.$key.'='.$value;
+			$upload_button.=' '.$key.'="'.$value.'"';
 		}
 	}
 	$upload_button.=' multiple='.$multiple;
