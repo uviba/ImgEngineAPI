@@ -123,7 +123,8 @@ this.upload_file_count_limit=false;
 		//alert('I begin');
 		element.next('.uviba-response-container').append('<div upload-index="'+index+'" class="uviba-response-image" style="margin: 6px 5px;display: inline-block;border: 1px solid #1874CD;background: #e6e7e8;" >\
 			<div  class="uviba-response-image-loader" style="width:200px;" >\
-			<div  style="background:#1874CD;width:10%;min-width:10%;height:15px;min-height:15px;color: white;\
+			<div  style="background:#1874CD;width:10%;min-width:10%;height:auto;min-height:15px;color: white;font-size:13px;\
+		font-weight: 600;\
 	    text-align: center;"  >0%</div>\
 			</div>');
 	};
