@@ -496,7 +496,10 @@ public static function create_upload_button($attr=array()){
 			$upload_button.=' '.$key.'="'.$value.'"';
 		}
 	}
-	$upload_button.=' multiple='.$multiple;
+	if($multiple!='false'){
+		$upload_button.=' multiple='.$multiple;
+	}
+	
 	$upload_button.=' accept='.$accept;
 	/*
 ' uviba-uploader-id="profile_uploader"  accept="image/*" 
