@@ -134,6 +134,7 @@ this.upload_file_count_limit=false;
 		
 		var image_loader = element.next('.uviba-response-container').find('.uviba-response-image[upload-index="'+index+'"] > .uviba-response-image-loader > div');
 		image_loader.animate({width:percentComplete + "%" }, 100);
+		image_loader.animate({'min-width':percentComplete + "%" }, 100);
 		image_loader.html(percentComplete + "%");
 	};
 
