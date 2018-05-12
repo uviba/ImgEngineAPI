@@ -20,15 +20,14 @@
  		 
  this.when_upload_begin_func(element,index,othis.uploaded_item_count[uviba_uploader_id]);
 //var share_parent = $(element).closest('.share-all-content_js');
-                //indilik html multiple image etsen append edersen
-    var data = new FormData();
+     var data = new FormData();
   data.append('file',item);
 
   if(this.isset(params['addition_url_params'])){
   	$.each(params['addition_url_params'],function(key,val){
   		data.append(key,val);
   		//file_url = 
-  		//heleki ancaq yuxaridakidir
+  	 
   	});
   }
 
@@ -415,8 +414,8 @@ var element  = this.getbyclass('uviba-oos-image-uploader');
 		    			var imgURL = a_item.attr('href');
 		    			
 		    		}else{
-		    			//demeli image ola biler ya da basqa bir element
-		    			//demeli sina ki linki goturersen belke raw link atib
+		    			//it could be image
+		    			//test it if it is raw link or not
 		    			return;
 		    		}
 		    	}
