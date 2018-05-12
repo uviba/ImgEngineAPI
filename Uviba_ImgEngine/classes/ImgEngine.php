@@ -3,6 +3,7 @@
 
 class ImgEngine{
 
+// HEAD Engineer (Robert)
 
 private $expire_hour = 1;
 private $private_key;
@@ -17,8 +18,8 @@ public $last_response=null;
 public static $manipulate_param_error = "Manipulation param does not exist, if it is new param please update library to get it, if it didn't work , make sure param's name exists";
 public static $instance;
 	public function __construct($private_key,$new_expire_hour=12,$secure=true,$params=array()){
-		//$Uviba_API_URL eslinde bos olmamali cunki
-		//bu url ile script tag alinir ama bos olma sebebi evvelki method ile edenlerde de problem cixmasin
+		//$Uviba_API_URL should be empty
+		//with a url we will not get anything now but let it be there so old users will be affected
 		$this->expire_hour=$new_expire_hour;
 		$this->private_key=$private_key;
 		if($secure===true){
@@ -27,12 +28,12 @@ public static $instance;
 			$this->secure=0;
 		}
 		$this->key_file_path  = KEY_FILE_PATH;
-		//asagidaki connect keyi yadda saxlamaq ucun cagrilib ve belelikle
-		//connect key cagirmadan ishletmek mumkun olacaq
+		//below connect key called to save it
+		//so we could use connectkey without calling it
 		$this->ApiPath = dirname(__DIR__);
 
 		if(isset($params['web_folder_url'])){
-			//oz serverindeki saytdan sekilleri ceksinler
+			//pull images from their website so they could use it
 			$this->web_folder_url = $params['web_folder_url'];
 		}
 
@@ -61,7 +62,7 @@ $file_path='http://'.$_SERVER['HTTP_HOST'].'/'.$file_path;
 	}
 	*/ 
 
-	//sonra url support da qoyarsan
+	//then put url support
 
 	public function generate_new_key(){
 		
@@ -85,7 +86,7 @@ $file_path='http://'.$_SERVER['HTTP_HOST'].'/'.$file_path;
 	}
 	public function get_connect_key(){
 		if(!is_null($this->connect_key)){
-			//demeli cagrilib onda return edek
+			//it means it called before so return it
 			return $this->connect_key;
 		}
 		$data = $this->read_file($this->key_file_path);
@@ -113,7 +114,7 @@ $file_path='http://'.$_SERVER['HTTP_HOST'].'/'.$file_path;
 				if(time()+60*2>$data_ar['expire_time'] || $data_ar['private_key']!=$this->private_key  ){
 					//it means key has been expired or private_key has been changed
 				}else if($data_ar['secure']!=$this->secure){
-					//demeli biri secure isteyir obiri yox yenisini generate etsin
+					//it means key.txt and real one is not matching
 				}else{
 					
 					if($data_ar['web_folder_url']!=$this->web_folder_url){
@@ -199,7 +200,7 @@ $file_path='http://'.$_SERVER['HTTP_HOST'].'/'.$file_path;
 				'q'=>'q',
 				'format'=>'fm',
 				'fm'=>'fm',
-				//asagidaki gelecekde olacaq ratio qorumadan resize edecek
+				//below one will be future feature
 				'ratio'=>'ratio',
 				'crop'=>'crop',//w,h,x,y
 				'zoom'=>'zoom',
@@ -214,7 +215,7 @@ $file_path='http://'.$_SERVER['HTTP_HOST'].'/'.$file_path;
 			$send_image_with_get=true;
 		}
 		if(is_array($manipulate_params)){
-			//demeli arrayi cevirmeliyik
+			//let's turn it to array (JOB: Shan)
 			$manipulate_params_ar = $manipulate_params;
 			$manipulate_params='';
 			$mp_func_ar = self::$mp_func_ar_public;
@@ -225,9 +226,9 @@ $file_path='http://'.$_SERVER['HTTP_HOST'].'/'.$file_path;
 					if(in_array($mp, self::$mp_multiple_func_ar_public) || 
 						strpos($val,',')!==false){
 						if(strpos($val, '(')===0){
-							//demeli birinci ( budur onda hecne
+							//so first one (JOB: john)
 						}else{
-							//eger deyilse onda ekleyek
+							//if it is not exists add it
 							$val='('.$val.')';
 						}
 					}
@@ -323,17 +324,11 @@ public static function download_auto($upload_path,$filename=""){
 		$data['file_name']=$filename;
 		$data['file_src']=self::get_image_url($filename,$_POST['response_url_params']);
 		return $data;
-//eyni ile upload etdiyin kimi return etmeli
-//sonra bu function u setUploadUrl izahini yazarsan ve
-//onun getdiyi url e bunu qoyanda ishleyer
-//ya da en azinda file_url ve filename return etmeli
-//eger basqa seye ehtiyaci olsa ozu echo etmemis arraya qoyar
-
-//bununla da upload url deqiqlesir qalir qisalashdirmaq, video falan	
-
+//return as how you uploaded it
+//or return file_url or filename
 }
 
-// Upload
+// Upload (Job: Alex)
 
 public static function upload($file_path,$params=array()){
 	self::is_auth();
@@ -346,7 +341,7 @@ public static function upload($file_path,$params=array()){
   			$download_to_own=true;
   		}
   	}
-  	//false yollasan bele orda serverde problem cixir
+  	//don't retun false, server will have problem
   	//$data['upload_filename']=false;
   	$filename = 'filename.png';
   	if(isset($params['filename'])){
@@ -360,14 +355,14 @@ public static function upload($file_path,$params=array()){
   	if(isset($params['file_url'])){
   		//$data['file_url']=$params['file_url'];
   		if (!filter_var($file_path, FILTER_VALIDATE_URL)) {
-  			//url deyilse base64 olub olmadigina baxacaq
+  			//if it is not url so check ifornot base64 
   			$img_code_string =base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $file_path) ) ;
 			$image_dimensions = getimagesizefromstring($img_code_string);
 			if(!$image_dimensions){
-				//demeli hec biri deyil
+				//so none of them
 				ImgEngine::give_error();
 			}else{
-				//demeli data uri dir
+				//means it is data uri
 			}
   		}
 $img = @file_get_contents($file_path);
@@ -392,7 +387,7 @@ $file_path=$tmpfname;
   	}
   	//echo$tmpfname;
 if($download_to_own!==false){
-	//demeli pathdi ozunden ozune ya da $_FILES['filetoUpload']['tmpname'] di
+	//it means path is from it to itself or $_FILES['filetoUpload']['tmpname']
 	if(!is_writable($file_path)){
 		ImgEngine::give_error(0,'upload folder is not writable');
 	}
@@ -430,7 +425,7 @@ if($download_to_own!==false){
 				unlink($tmpfname);
 			}
 		}
-		//eger ozune yuklemirse
+		//if not upload it to itself
 		//self::$instance->last_response=$result;
 		if(self::$instance->isJson($result)){
 					$data_ar = json_decode($result,true);
@@ -438,7 +433,7 @@ if($download_to_own!==false){
 			return $data_ar;
 		}
   	}else{
-		//download edirse ozune yukleyirse
+		
 		if($put_content_success!=false){
 			return true;
 		}
